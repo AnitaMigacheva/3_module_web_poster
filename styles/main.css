@@ -1,0 +1,18 @@
+@import "reset.css";
+@import "fonts.css";
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  height: 100vh;
+  background: #000;
+  font-family: 'Neue Machina';
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}

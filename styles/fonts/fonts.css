@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Neue Machina";
+  font-weight: light;
+  src: url(fonts/Neue Machina-Light.otf) format("opentype");
+}
+@font-face {
+  font-family: "Neue Machina";
+  font-weight: regular;
+  src: url(fonts/NeueMachina-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "Neue Machina";
+  font-weight: extrabold;
+  src: url(fonts/NeueMachina-Ultrabold.otf) format("opentype");
+}
