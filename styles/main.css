@@ -16,3 +16,44 @@ body {
   align-items: center;
   width: 100%;
 }
+h1 {
+  font-size: 40px;
+  letter-spacing: .03;
+  font-weight: bold;
+}
+.wrapper {
+  width: 100%;
+  padding: 60px;
+}
+.wrapper2 {
+
+  display: flex;
+  justify-content: space-between;
+  height: 80vh;
+  position: relative;
+}
+.items {
+  /* height: 100%; */
+  display: flex;
+  /* width: 80%; */
+  flex-wrap: wrap;
+  margin-left: 300px;
+}
+.description_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.can {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.can_top {
+  position: absolute;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+}
