@@ -6,54 +6,113 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html, body {
+  height: 100%;
+}
 body {
   height: 100vh;
   background: #000;
   font-family: 'Neue Machina';
   color: white;
   overflow: hidden;
-  display: flex;
-  align-items: center;
   width: 100%;
 }
 h1 {
   font-size: 40px;
   letter-spacing: .03;
   font-weight: bold;
+  padding-bottom: 80px;
+  align-self: flex-end;
 }
 .wrapper {
   width: 100%;
-  padding: 60px;
+  margin: 0 10%;
 }
 .wrapper2 {
-
   display: flex;
+  align-items: center;
+  flex-direction: row;
   justify-content: space-between;
-  height: 80vh;
+  height: 100vh;
+  padding: 2% 0;
   position: relative;
+}
+.logo {
+  width: 100px;
+  align-self: flex-start;
+  position: absolute;
+  z-index: 1;
 }
 .items {
   /* height: 100%; */
   display: flex;
   /* width: 80%; */
   flex-wrap: wrap;
-  margin-left: 300px;
+  margin-left: 10%;
+  margin-right: 20%;
+  width: 40%;
+  justify-content: space-between;
+}
+.top_items_wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.bottom_items_wrapper {
+  display: flex;
+  flex-wrap: nowrap;
 }
 .description_wrapper {
+  justify-content: flex-end;
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+.adress,
+.description {
+  padding-bottom: 50px;
+  font-size: 16px;
+  letter-spacing: .03;
+  width: 300px;
+  line-height: 120%;
 }
 .can {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  transform: rotate(30deg);
+
 }
 .can_top {
   position: absolute;
+  transition: all 3s ease;
 }
-
 footer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+.collar {
+  align-self: flex-start;
+  padding-left: 10%;
+}
+.can,
+.ball,
+.can-top,
+.bottle {
+  align-self: center;
+}
+
+.wrapper_liguid {
+  text-align:center;
+  position: absolute;
+  opacity: 0;
+  transition: all 5s ease-in;
+  transition: scale(0.1);
+}
+.liguid {
+  margin: 0 auto;
+  width: 300px;
+  height: auto;
+  position: absolute;
+  z-index: -1;
 }

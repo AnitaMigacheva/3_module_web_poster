@@ -4,7 +4,7 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2017, Codrops
  * http://www.codrops.com
  */
@@ -88,7 +88,7 @@
 				duration: this.CONFIG.animation[targetStr].duration,
 				delay: this.CONFIG.animation[targetStr].delay,
 				easing: this.CONFIG.animation[targetStr].easing,
-				elasticity: this.CONFIG.animation[targetStr].elasticity,	
+				elasticity: this.CONFIG.animation[targetStr].elasticity,
 				scaleX: this.isActive ? this.CONFIG.animation[targetStr].scaleX : 1,
 				scaleY: this.isActive ? this.CONFIG.animation[targetStr].scaleY : 1,
 				translateX: this.isActive ? this.CONFIG.animation[targetStr].translateX : 0,
@@ -106,31 +106,9 @@
 			anime(this.getAnimeObj('path'));
 			anime(this.getAnimeObj('image'));
 			anime(this.getAnimeObj('deco'));
-			// Title and Subtitle animation
-			anime.remove(this.DOM.title);
-			anime({
-				targets: this.DOM.title,
-				easing: 'easeOutQuad',
-				translateY: this.isActive ? [
-					{value: '-50%', duration: 200},
-					{value: ['50%', '0%'], duration: 200}
-				] : [
-					{value: '50%', duration: 200},
-					{value: ['-50%', '0%'], duration: 200}
-				],
-				opacity: [
-					{value: 0, duration: 200},
-					{value: 1, duration: 200}
-				]
-			});
-			anime.remove(this.DOM.subtitle);
-			anime({
-				targets: this.DOM.subtitle,
-				easing: 'easeOutQuad',
-				translateY: this.isActive ? {value: ['50%', '0%'], duration: 200, delay: 250} : {value: '0%', duration: 1},
-				opacity: this.isActive ? {value: [0,1], duration: 200, delay: 250} : {value: 0, duration: 1}
-			});
-		}
+	  };
+
+
 	}
 
 	const items = Array.from(document.querySelectorAll('.item'));
