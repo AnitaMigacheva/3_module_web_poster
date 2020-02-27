@@ -84,7 +84,6 @@ h1 {
   display: flex;
   justify-content: center;
   transform: rotate(30deg);
-
 }
 .can_top {
   position: absolute;
@@ -94,6 +93,9 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+footer p {
+  font-weight: lighter;
 }
 .collar {
   /* align-self: flex-start; */
