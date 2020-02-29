@@ -21,7 +21,6 @@ h1 {
   font-size: 40px;
   letter-spacing: .03;
   font-weight: bold;
-  padding-bottom: 80px;
   align-self: flex-end;
 }
 .wrapper {
@@ -42,12 +41,14 @@ h1 {
   align-self: flex-start;
   position: absolute;
   z-index: 1;
+  padding-top: 50px;
 }
 .items {
   /* height: 100%; */
   display: flex;
+  flex-direction: column;
   /* width: 80%; */
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-left: 10%;
   margin-right: 12%;
   width: 60%;
@@ -66,10 +67,10 @@ h1 {
   flex-wrap: nowrap;
 }
 .description_wrapper {
-  justify-content: flex-end;
+  justify-content: center;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 80%;
 }
 .adress,
 .description {
@@ -127,4 +128,34 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .description_wrapper {
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 80%;
+  }
+  /* .item img,
+  .item.can img {
+    width: 240px;
+  } */
+  .wrapper2 {
+    flex-direction: column;
+  }
+  h1 {
+    align-self: flex-start;
+  }
+
+}
+
+
+@media (min-width: 480px) and (max-width: 767px) {
+}
+@media (min-width: 375px) and (max-width: 479px) {
+
+}
+@media (min-width: 300px) and (max-width: 374px) {
 }
