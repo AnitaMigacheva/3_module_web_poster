@@ -11,7 +11,6 @@ let liquid = document.body.querySelector('.liquid');
 
 function openCan(){
   canTop.style.transform = 'rotate(-40deg) translate(10px, -50px)'
-  // flyBones()
 }
 
 function spill(){

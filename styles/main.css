@@ -25,14 +25,14 @@ h1 {
 }
 .wrapper {
   width: 100%;
-  margin: 0 10%;
+  padding: 0 10%;
 }
 .wrapper2 {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  height: 100vh;
+  height: 94vh;
   padding: 2% 0;
   position: relative;
 }
@@ -50,7 +50,7 @@ h1 {
   /* width: 80%; */
   flex-wrap: nowrap;
   margin-left: 10%;
-  margin-right: 12%;
+  /* margin-right: 12%; */
   width: 60%;
   height: 80%;
   align-items: center;
