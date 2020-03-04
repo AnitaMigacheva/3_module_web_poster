@@ -56,6 +56,17 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+.item:hover {
+  transform: scale(1.1) rotate(6deg);
+  transition: 1s ease-in;
+  /* animation: 8s ease infinite hanging; */
+}
+/* @keyframes hanging {
+  50% {
+    transform: translateY(4%);
+  }
+
+} */
 .top_items_wrapper {
   display: flex;
   flex-wrap: nowrap;
@@ -84,7 +95,6 @@ h1 {
   position: relative;
   display: flex;
   justify-content: center;
-  transform: rotate(30deg);
 }
 .can_top {
   position: absolute;
@@ -109,19 +119,12 @@ footer p {
   align-self: center;
 }
 .bottle {
-<<<<<<< HEAD
-=======
-
->>>>>>> de5aeecb706b8553683aa42b8f3ebe3af75d40d6
   padding-left: 8%;
 }
 .wrapper_liquid {
   text-align: center;
   position: absolute;
-<<<<<<< HEAD
-=======
   z-index: -1;
->>>>>>> de5aeecb706b8553683aa42b8f3ebe3af75d40d6
 }
 .liquid {
   opacity: 0;
@@ -130,6 +133,23 @@ footer p {
   padding-left: 26%;
   height: auto;
   transition: all 3s ease-in;
+}
+.liquid_img {
+  animation: 80s ease 3s infinite swim;
+}
+@keyframes swim {
+  10% {
+    transform: scale(1.3);
+  }
+  30% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.3) rotate(60deg);
+  }
+  70% {
+    transform: scale(1.2) rotate(90deg);
+  }
 }
 div.item.bottle {
   position: relative;
@@ -152,7 +172,6 @@ div.item.bottle {
     width: 100%;
   }
   .description_wrapper {
-
     padding-top: 10%;
     justify-content: flex-end;
     display: flex;
@@ -172,9 +191,7 @@ div.item.bottle {
   h1 {
     align-self: flex-start;
   }
-
 }
-
 
 @media (min-width: 480px) and (max-width: 767px) {
 }
