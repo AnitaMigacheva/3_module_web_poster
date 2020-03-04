@@ -109,22 +109,30 @@ footer p {
   align-self: center;
 }
 .bottle {
+<<<<<<< HEAD
+=======
+
+>>>>>>> de5aeecb706b8553683aa42b8f3ebe3af75d40d6
   padding-left: 8%;
 }
 .wrapper_liquid {
   text-align: center;
   position: absolute;
+<<<<<<< HEAD
+=======
+  z-index: -1;
+>>>>>>> de5aeecb706b8553683aa42b8f3ebe3af75d40d6
 }
 .liquid {
   opacity: 0;
   transform: scale(0);
-  width: 300px;
+  width: 120%;
+  padding-left: 26%;
   height: auto;
-  position: absolute;
-  z-index: -1;
   transition: all 3s ease-in;
 }
-.item .bottle {
+div.item.bottle {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,6 +146,21 @@ footer p {
     display: flex;
     flex-direction: row-reverse;
     height: 80%;
+  }
+  .items {
+    margin-left: 0;
+    width: 100%;
+  }
+  .description_wrapper {
+
+    padding-top: 10%;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 30%;
+  }
+  .item {
+    transform: scale(1.2);
   }
   /* .item img,
   .item.can img {
