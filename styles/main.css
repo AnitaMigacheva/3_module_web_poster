@@ -158,6 +158,10 @@ div.item.bottle {
   justify-content: center;
   position: relative;
 }
+.bones {
+  position: absolute;
+  display: none;
+}
 
 
 @media (min-width: 768px) and (max-width: 1023px) {

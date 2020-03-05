@@ -4,7 +4,7 @@ let bottle = document.body.querySelector('.bottle');
 let ball = document.body.querySelector('.ball');
 let collar = document.body.querySelector('.collar');
 let liquid = document.body.querySelector('.liquid');
-
+let bones =
 //
 // function flyBones(){
 //  while(can.className == 'open')
