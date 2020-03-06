@@ -185,7 +185,7 @@ div.item.bottle {
     justify-content: space-between;
   }
   .description_wrapper {
-    padding-top: 10%;
+    padding-top: 20%;
     justify-content: flex-end;
     display: flex;
     flex-direction: row-reverse;
@@ -193,7 +193,7 @@ div.item.bottle {
     width: 100%;
   }
   .item {
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
   .item:hover {
     transform: scale(1.4);
