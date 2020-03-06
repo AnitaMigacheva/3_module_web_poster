@@ -18,7 +18,7 @@ can.addEventListener('click', () => {
 
 function openCan(){
   if (can.classList.contains('open')) {
-    canTop.style.transform = 'rotate(-40deg) translate(10px, -50px)'
+    canTop.style.transform = 'rotate(-40deg) translate(10px, -70px)'
   }
 }
 
