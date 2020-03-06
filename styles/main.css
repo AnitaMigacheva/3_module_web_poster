@@ -116,7 +116,7 @@ footer p {
   padding-left: 10%;
 }
 .can,
-.ball,
+.main_ball,
 .can-top,
 .bottle {
   align-self: center;
@@ -161,7 +161,19 @@ div.item.bottle {
   justify-content: center;
   position: relative;
 }
-.bones {
+.bones_wrapper {
+  position: absolute;
+  display: none;
+}
+.balls_wrapper {
+  position: absolute;
+  display: none;
+}
+.ball {
+  position: absolute;
+  display: none;
+}
+.ball:hover {
   position: absolute;
   display: none;
 }

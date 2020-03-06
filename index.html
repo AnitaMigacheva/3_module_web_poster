@@ -30,7 +30,7 @@
       <div class="items">
 
         <div class="top_items_wrapper">
-          <div class="item ball">
+          <div class="item main_ball" onclick="showBalls()">
             <img src="img/ball.svg" alt="">
           </div>
           <div class="item collar">
@@ -64,12 +64,98 @@
         </div>
       </div>
     </div>
-    <div class="bones">
+    <div class="bones_wrapper">
       <img src="img/bone-gold.svg" alt="" class="bone bone_gold">
       <img src="img/bone-gold-cross.svg" alt="" class="bone bone_gold_cross">
       <img src="img/bone-red.svg" alt="" class="bone bone_red">
       <img src="img/bone-red-cross.svg" alt="" class="bone bone_red_cross">
     </div>
+    <div class="balls_wrapper">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball-text.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/moon.png"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball-text.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/moon.png"  class="ball"alt="">
+      <img src="img/ball-text.svg"  class="ball"alt="">
+      <img src="img/ball-text.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/face.png"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+      <img src="img/ball.svg"  class="ball"alt="">
+    </div>
+
+    <canvas id="myCanvas"></canvas>
+<script>
+    function loadImages(sources, callback) {
+        var images = {};
+        var loadedImages = 0;
+        var numImages = 0;
+        // get num of sources
+        for ( var src in sources) {
+            numImages++;
+        }
+        for ( var src in sources) {
+            images[src] = new Image();
+            images[src].onload = function() {
+                if (++loadedImages >= numImages) {
+                    callback(images);
+                    }
+            };
+            images[src].src = sources[src];
+        }
+    }
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    fitToContainer(canvas);
+    var sources = {
+        darthVader : 'img/face.png',
+        yoda : 'img/face.png'
+    };
+
+
+    loadImages(sources, function(images) {
+    var nextX=0;
+    context.drawImage(images.darthVader, nextX,0);
+    nextX+=images.darthVader.width;
+    context.drawImage(images.yoda, nextX, 30);
+    nextX+=images.yoda.width;
+    context.drawImage(images.darthVader, nextX,0);
+    nextX+=images.darthVader.width;
+    context.drawImage(images.yoda, nextX, 30);
+    nextX+=images.yoda.width;
+    context.drawImage(images.darthVader, nextX,0);
+    nextX+=images.darthVader.width;
+    context.drawImage(images.yoda, nextX, 30);
+    nextX+=images.yoda.width;
+    context.drawImage(images.darthVader, nextX,0);
+    nextX+=images.darthVader.width;
+    context.drawImage(images.yoda, nextX, 30);
+    nextX+=images.yoda.width;
+    // ...and so on...
+   });
+
+    function fitToContainer(canvas) {
+        canvas.style.width = '2000px';
+        canvas.style.height = '2000px';
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+    </script>
   </div>
   <script src="js/main.js" charset="utf-8" type="text/javascript"></script>
 </body>
