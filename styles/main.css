@@ -26,6 +26,8 @@ h1 {
 .wrapper {
   width: 100%;
   padding: 0 10%;
+  align-items: center;
+  display: flex;
 }
 .wrapper2 {
   display: flex;
@@ -35,6 +37,7 @@ h1 {
   height: 94vh;
   padding: 2% 0;
   position: relative;
+  width: 90%;
 }
 .logo {
   width: 100px;
