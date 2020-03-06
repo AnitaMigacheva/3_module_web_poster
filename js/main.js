@@ -12,16 +12,14 @@ can.addEventListener('click', () => {
   can.classList.toggle("open")
 })
 
-function flyBones(){
-  
-  while(can.className == 'open')
-}
+// function flyBones(){
+//   while(can.className == 'open')
+// }
 
 function openCan(){
   if (can.classList.contains('open')) {
     canTop.style.transform = 'rotate(-40deg) translate(10px, -50px)'
   }
-
 }
 
 function spill(){
