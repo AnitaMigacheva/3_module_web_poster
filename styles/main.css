@@ -37,7 +37,7 @@ h1 {
   position: relative;
 }
 .logo {
-  width: 80px;
+  width: 100px;
   align-self: flex-start;
   position: absolute;
   z-index: 1;
@@ -58,7 +58,7 @@ h1 {
 }
 .item:hover {
   transform: scale(1.1) rotate(6deg);
-  transition: 1s ease-in;
+  transition: 0.8s ease-in;
   /* animation: 8s ease infinite hanging; */
 }
 /* @keyframes hanging {
@@ -175,6 +175,15 @@ div.item.bottle {
     margin-left: 0;
     width: 100%;
   }
+  .top_items_wrapper {
+    width: 80%;
+    justify-content: space-between;
+    padding-bottom: 16%;
+  }
+  .bottom_items_wrapper {
+    width: 80%;
+    justify-content: space-between;
+  }
   .description_wrapper {
     padding-top: 10%;
     justify-content: flex-end;
@@ -185,6 +194,9 @@ div.item.bottle {
   }
   .item {
     transform: scale(1.2);
+  }
+  .item:hover {
+    transform: scale(1.4);
   }
   /* .item img,
   .item.can img {
