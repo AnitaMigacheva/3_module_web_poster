@@ -70,7 +70,7 @@
       <img src="img/bone-red.svg" alt="" class="bone bone_red">
       <img src="img/bone-red-cross.svg" alt="" class="bone bone_red_cross">
     </div>
-    <div class="balls_wrapper">
+    <!-- <div class="balls_wrapper">
       <img src="img/ball.svg"  class="ball"alt="">
       <img src="img/ball.svg"  class="ball"alt="">
       <img src="img/ball.svg"  class="ball"alt="">
@@ -97,65 +97,9 @@
       <img src="img/ball.svg"  class="ball"alt="">
       <img src="img/ball.svg"  class="ball"alt="">
       <img src="img/ball.svg"  class="ball"alt="">
-    </div>
+    </div> -->
 
-    <canvas id="myCanvas"></canvas>
-<script>
-    function loadImages(sources, callback) {
-        var images = {};
-        var loadedImages = 0;
-        var numImages = 0;
-        // get num of sources
-        for ( var src in sources) {
-            numImages++;
-        }
-        for ( var src in sources) {
-            images[src] = new Image();
-            images[src].onload = function() {
-                if (++loadedImages >= numImages) {
-                    callback(images);
-                    }
-            };
-            images[src].src = sources[src];
-        }
-    }
-    var canvas = document.getElementById('myCanvas');
-    var context = canvas.getContext('2d');
-    fitToContainer(canvas);
-    var sources = {
-        darthVader : 'img/face.png',
-        yoda : 'img/face.png'
-    };
-
-
-    loadImages(sources, function(images) {
-    var nextX=0;
-    context.drawImage(images.darthVader, nextX,0);
-    nextX+=images.darthVader.width;
-    context.drawImage(images.yoda, nextX, 30);
-    nextX+=images.yoda.width;
-    context.drawImage(images.darthVader, nextX,0);
-    nextX+=images.darthVader.width;
-    context.drawImage(images.yoda, nextX, 30);
-    nextX+=images.yoda.width;
-    context.drawImage(images.darthVader, nextX,0);
-    nextX+=images.darthVader.width;
-    context.drawImage(images.yoda, nextX, 30);
-    nextX+=images.yoda.width;
-    context.drawImage(images.darthVader, nextX,0);
-    nextX+=images.darthVader.width;
-    context.drawImage(images.yoda, nextX, 30);
-    nextX+=images.yoda.width;
-    // ...and so on...
-   });
-
-    function fitToContainer(canvas) {
-        canvas.style.width = '2000px';
-        canvas.style.height = '2000px';
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-    }
-    </script>
   </div>
+  <canvas id="myCanvas"></canvas>
   <script src="js/main.js" charset="utf-8" type="text/javascript"></script>
 </body>

@@ -178,6 +178,14 @@ div.item.bottle {
   display: none;
 }
 
+#myCanvas {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  
+}
+
 @media (min-width: 1566px) and (max-width: 2900px) {
   .item {
     transform: scale(1.3);
