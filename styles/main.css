@@ -171,15 +171,13 @@ div.item.bottle {
   display: none;
   top: 0;
   left: 0;
-
 }
 .ball {
-  transition: all 20s ease-in;
   position: absolute;
   display: none;
   top: 0;
   left: 0;
-  animation:  infinite 6s  rotate;
+  animation:  infinite 6s linear rotate;
 }
 
 @keyframes rotate {
