@@ -7,9 +7,7 @@ let liquid = document.body.querySelector('.liquid')
 let bones = document.body.querySelectorAll('.bone')
 let bonesWrapper = document.body.querySelector('.bones')
 
-let mainBall = document.body.querySelector('.main_ball')
-let balls = document.body.querySelectorAll('.ball')
-let ballsWrapper = document.body.querySelector('.balls_wrapper')
+
 
 can.addEventListener('click', () => {
   can.classList.toggle("open")
@@ -31,69 +29,60 @@ function spill(){
 }
 
 
-// function showBalls() {
-//   ballsWrapper.style.display = 'block'
-//   balls.forEach(element => element.style.display = 'block');
-// }
+let mainBall = document.body.querySelector('.main_ball')
+let balls = document.body.querySelectorAll('.ball')
+let ballsWrapper = document.body.querySelector('.balls_wrapper')
+let a = Array.from(balls)
 
-function loadImages(sources, callback) {
-    let images = {};
-    let loadedImages = 0;
-    let numImages = 0;
-    // get num of sources
-    for ( let src in sources) {
-        numImages++;
-    }
-    for ( let src in sources) {
-        images[src] = new Image();
-        images[src].onload = function() {
-            if (++loadedImages >= numImages) {
-                callback(images);
-                }
-        };
-        images[src].src = sources[src];
-    }
+function showBalls() {
+  ballsWrapper.style.display = 'block'
+  a.forEach(element => element.style.display = 'block');
+  // let nextX = '0';
+
+  for (let i = 0; i = a.length; i++) {
+
+    a[i].style.top =  a[i].width + 100;
+    a[i].style.left = a[i].width;
+    // nextX +=   balls[i].width;
+
+  }
+
+
 }
-let canvas = document.getElementById('myCanvas');
-let context = canvas.getContext('2d');
-fitToContainer(canvas);
-let sources = {
-    ballText: 'img/ball-text.svg',
-    moon: 'img/moon.png',
-    face: 'img/face.png',
-    ball: 'img/ball.svg'
-};
+
+// let ball1 = document.getElementById('ball1')
+// let ball2 = document.getElementById('ball2')
+// let ball3 = document.getElementById('ball3')
 
 
-loadImages(sources, function(images) {
-let nextX = 0;
-let nextY = 0;
-context.drawImage(images.ball, nextX,0);
-nextX+=images.ball.width;
-context.drawImage(images.moon, nextX, 0);
-nextX+=images.moon.width;
-context.drawImage(images.ball, nextX,0);
-nextX+=images.ball.width;
-context.drawImage(images.ball, nextX,300);
-nextX+=images.ball.width;
-context.drawImage(images.ball, nextX,100);
-nextX+=images.ball.width;
-context.drawImage(images.ball, nextX,300);
-nextX+=images.ball.width;
-context.drawImage(images.ball, nextX,200);
-nextX+=images.ball.width;
-context.drawImage(images.ball, nextX,300);
-nextX+=images.ball.width;
-context.drawImage(images.ball, nextX,0);
-nextX+=images.ball.width;
-// ...and so on...
-});
+// let nextX = '0';
+// let nextY = '0';
+//
+//
+// var overlap = !(ball1.right < ball2.left ||
+//                 ball1.left > ball2.right ||
+//                 ball1.bottom < ball2.top ||
+//                 ball1.top > ball2.bottom)
 
-function fitToContainer(canvas) {
-    canvas.style.width = '100vw';
-    canvas.style.height = '100vh';
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    canvas.style.position = 'absolute';
-    canvas.style.zIndex = '1';
-}
+
+
+
+
+// context.drawImage(images.ball, nextX,0);
+// nextX+=images.ball.width;
+// context.drawImage(images.moon, nextX, 0);
+// nextX+=images.moon.width;
+// context.drawImage(images.ball, nextX,0);
+// nextX+=images.ball.width;
+// context.drawImage(images.ball, nextX,300);
+// nextX+=images.ball.width;
+// context.drawImage(images.ball, nextX,100);
+// nextX+=images.ball.width;
+// context.drawImage(images.ball, nextX,300);
+// nextX+=images.ball.width;
+// context.drawImage(images.ball, nextX,200);
+// nextX+=images.ball.width;
+// context.drawImage(images.ball, nextX,300);
+// nextX+=images.ball.width;
+// context.drawImage(images.ball, nextX,0);
+// nextX+=images.ball.width;

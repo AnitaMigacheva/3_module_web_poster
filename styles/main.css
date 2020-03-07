@@ -165,26 +165,40 @@ div.item.bottle {
   position: absolute;
   display: none;
 }
+
 .balls_wrapper {
   position: absolute;
   display: none;
+  top: 0;
+  left: 0;
+
 }
 .ball {
+  transition: all 20s ease-in;
   position: absolute;
   display: none;
+  top: 0;
+  left: 0;
+  animation:  infinite 6s  rotate;
 }
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .ball:hover {
-  position: absolute;
   display: none;
 }
 
-#myCanvas {
+/* #myCanvas {
   position: absolute;
   width: 100vw;
   height: 100vh;
   top: 0;
-  
-}
+
+} */
 
 @media (min-width: 1566px) and (max-width: 2900px) {
   .item {
