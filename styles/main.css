@@ -115,6 +115,10 @@ footer p {
   /* align-self: flex-start; */
   padding-left: 10%;
 }
+
+.collar_other {
+  display: none;
+}
 .can,
 .main_ball,
 .can-top,
