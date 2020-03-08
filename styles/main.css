@@ -173,13 +173,17 @@ div.item.bottle {
   left: 0;
 }
 .ball {
-  position: absolute;
+  /* position: absolute; */
   display: none;
   top: 0;
   left: 0;
+
   animation:  infinite 6s linear rotate;
 }
 
+.ball:nth-child(even) {
+  padding-top: 3%;
+}
 /* @keyframes rotate {
   to {
     transform: rotate(360deg);
