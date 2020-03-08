@@ -28,22 +28,32 @@ function spill(){
   liquid.style.transform = 'scale(1)'
 }
 
-//
-// let mainBall = document.body.querySelector('.main_ball')
-// let balls = document.body.querySelectorAll('.ball')
-// let ballsWrapper = document.body.querySelector('.balls_wrapper')
-// let a = Array.from(balls)
-//
+
+let mainBall = document.body.querySelector('.main_ball')
+let balls = document.body.querySelectorAll('.ball')
+let ballsWrapper = document.body.querySelector('.balls_wrapper')
+let a = Array.from(balls)
+
 function showBalls() {
   ballsWrapper.style.display = 'block'
-  a.forEach(element => element.style.display = 'block');
-  let nextX = '0';
+  a.forEach(element => element.style.display = 'block')
 
-  for (let i = 0; i = a.length; i++) {
 
-    a[i].style.top =  a[i].width + 100;
-    a[i].style.left = a[i].width;
-    // nextX +=   balls[i].width;
+  function getRandomPosition(element) {
+    var x = document.body.offsetHeight-element.clientHeight;
+    var y = document.body.offsetWidth-element.clientWidth;
+    var randomX = Math.floor(Math.random()*x);
+    var randomY = Math.floor(Math.random()*y);
+    return [randomX,randomY];
+  }
+
+
+
+  for (let i = 0; i < a.length; i++) {
+    var xy = getRandomPosition(ballsWrapper);
+    a[i].style.top = xy[0] + 'px';
+    a[i].style.left = xy[1] + 'px';
+
   }
 
 }

@@ -191,39 +191,9 @@ div.item.bottle {
 }
 
 
-.boxes {
-    position: absolute;
-}
 
-body {
-  background-color: #134;
-  overflow: hidden;
-}
 
-.bubble {
-  width: 150px;
-  height: 70px;
-  line-height: 70px;
-  font-weight: bold;
-  position: absolute;
-  left: 0px;
-  text-align: center;
-  background-color: #ff0000;
-  background-color: #d50000;
-  background-color: #b71c1c;
-  color: rgba(0,255,255,0.9);
-  border-radius: 10px;
-  opacity: 0;
-  will-change: transform;
-}
 
-/* #myCanvas {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-
-} */
 
 @media (min-width: 1566px) and (max-width: 2900px) {
   .item {
