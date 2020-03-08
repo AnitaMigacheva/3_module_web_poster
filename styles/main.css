@@ -180,18 +180,15 @@ div.item.bottle {
   animation:  infinite 6s linear rotate;
 }
 
-@keyframes rotate {
+/* @keyframes rotate {
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .ball:hover {
   display: none;
 }
-
-
-
 
 
 
