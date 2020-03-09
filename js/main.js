@@ -7,10 +7,41 @@ let liquid = document.body.querySelector('.liquid')
 let bones = document.body.querySelectorAll('.bone')
 let bonesWrapper = document.body.querySelector('.bones')
 
+// let collars = document.body.querySelectorAll('.collar_other')
+// let collarsArray = Array.from(collars)
+
+let images = new Array();
+let i = 0;
+
+images[0] = './img/collar-red.svg';
+images[1] = './img/collar-wat.svg';
+images[2] = './img/collar-black.svg';
+images[3] = './img/collar-eyes.svg';
+images[4] = './img/collar-gold.svg';
+images[5] = './img/collar-gold.svg';
+images[6] = './img/collar-gold.svg';
+// images[7] = './img/fish.png';
+// let fish = images[7]
+// fish.width = '300px';
+
+function changeCollar() {
+
+  let collar = document.getElementById('collar_img')
+  // collarsArray.forEach(element => element.style.display = 'block')
+  collar.src= images[i];
+  i++;
+  if (i == images.length) {
+    collar.src = './img/collar.svg';
+  }
+  setTimeout("changeCollar()",900);
+
+
+}
 
 
 can.addEventListener('click', () => {
-  can.classList.toggle("open")
+  can.classList.toggle('open')
+  openCan()
 })
 
 // function flyBones(){
@@ -28,54 +59,57 @@ function spill(){
   liquid.style.transform = 'scale(1)'
 }
 
+// showBalls -----------------------------------------------
 
 let mainBall = document.body.querySelector('.main_ball')
 let balls = document.body.querySelectorAll('.ball')
 let ballsWrapper = document.body.querySelector('.balls_wrapper')
 let a = Array.from(balls)
 
+
+
 function showBalls() {
   ballsWrapper.style.display = 'block'
-  a.forEach(element => element.style.display = 'inline-block')
+  a.forEach(element => element.style.display = 'block')
 
 
-  // function getRandomPosition(element) {
-  //   var x = document.body.offsetHeight-element.clientHeight;
-  //   var y = document.body.offsetWidth-element.clientWidth;
-  //   var randomX = Math.floor(Math.random()*x);
-  //   var randomY = Math.floor(Math.random()*y);
-  //   return [randomX,randomY]
-  // }
-  //
-  //
-  //
-  // let i = 0
-  // let next = 1
-  // for (i = 0; i < a.length; i++) {
-  //   var xy = getRandomPosition(ballsWrapper);
-  //
-  //
-  //
-  //   a[i].style.width = mainBall.width;
-  //
-  //   a[i].style.top = xy[0] + 'px';
-  //   a[i].style.left = xy[1] + 'px';
-  //   a[i].style.right = xy[1] + 'px';
-  //   a[i].style.bottom = xy[0] + 'px';
-  //
-  //   next = i+1
-  //   console.log(next)
-  // }
-  //
-  // let rect1 = a[0]
-  // let rect2 = a[1]
-  //
-  //
-  // let overlap = !(rect1.top <= rect2.bottom && rect1.bottom >= rect2.top && rect1.left <= rect2.right && rect1.right >= rect2.left)
-  //
-  //
-  // console.log(rect1);
-  // console.log(rect2);
+  function getRandomPosition(element) {
+    let x = document.body.offsetHeight-element.clientHeight;
+    var y = document.body.offsetWidth-element.clientWidth;
+    var randomX = Math.floor(Math.random()*x);
+    var randomY = Math.floor(Math.random()*y);
+    return [randomX,randomY]
+  }
+
+
+
+  let i = 0
+  let next = 1
+  for (i = 0; i < a.length; i++) {
+    var xy = getRandomPosition(ballsWrapper);
+
+
+
+    a[i].style.width = mainBall.width;
+
+    a[i].style.top = xy[0] + 'px';
+    a[i].style.left = xy[1] + 'px';
+    a[i].style.right = xy[1] + 'px';
+    a[i].style.bottom = xy[0] + 'px';
+
+    next = i+1
+    console.log(next)
+  }
+
+  let rect1 = a[0]
+  let rect2 = a[1]
+
+
+  let overlap = !(rect1.top <= rect2.bottom && rect1.bottom >= rect2.top && rect1.left <= rect2.right && rect1.right >= rect2.left)
+
+
+  console.log(rect1);
+  console.log(rect2);
 
 
 

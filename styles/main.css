@@ -116,9 +116,47 @@ footer p {
   padding-left: 10%;
 }
 
-.collar_other {
-  display: none;
+.item.collar {
+  position: relative;
+
 }
+
+/* .collar_other {
+  display: none;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+} */
+
+
+/*
+.collar_other.gold {
+  animation: appearhide ease 100ms;
+}
+.collar_other.eyes {
+  animation: appearhide 700ms ease 4s;
+}
+.collar_other.black {
+  animation: appearhide 700ms ease 6s;
+}
+.collar_other.wat {
+  animation: appearhide 700ms ease 8s;
+}
+.collar_other.red {
+  animation: appearhide 700ms ease 10s;
+}
+.collar_other.gold {
+  animation: appearhide 700ms ease 12s;
+}
+
+@keyframes appearhide {
+  90% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+} */
+
+
 .can,
 .main_ball,
 .can-top,
@@ -165,10 +203,150 @@ div.item.bottle {
   justify-content: center;
   position: relative;
 }
+
+/* ---------------------------BONES--------------------------*/
+
 .bones_wrapper {
   position: absolute;
   display: none;
 }
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+
+}
+
+
+
+.area{
+
+    width: 100%;
+    height:100vh;
+
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles img{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    animation: animate 5s linear infinite;
+    bottom: -150px;
+
+}
+
+.circles img:nth-child(1){
+    left: 25%;
+    width: 280px;
+    height: 280px;
+    animation-delay: 0s;
+}
+
+
+.circles img:nth-child(2){
+    left: 10%;
+    width: 120px;
+    height: 120px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles img:nth-child(3){
+    left: 70%;
+    width: 120px;
+    height: 120px;
+    animation-delay: 4s;
+}
+
+.circles img:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 8s;
+}
+
+.circles img:nth-child(5){
+    left: 65%;
+    width: 120px;
+    height: 120px;
+    animation-delay: 0s;
+}
+
+.circles img:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles img:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 2s;
+}
+
+.circles img:nth-child(8){
+    left: 50%;
+    width: 225px;
+    height: 225px;
+    animation-delay: 1s;
+    animation-duration: 15s;
+}
+
+.circles img:nth-child(9){
+    left: 20%;
+    width: 215px;
+    height: 215px;
+    animation-delay: 0s;
+    animation-duration: 5s;
+}
+
+.circles img:nth-child(10n){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 1s;
+}
+
+.circles img:nth-child(10){
+    left: 25%;
+    animation-delay: 3s;
+}
+
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+
+    }
+
+    100%{
+        transform: translateY(-2000px) rotate(720deg);
+
+    }
+
+}
+
+
 
 .balls_wrapper {
   position: absolute;
@@ -177,17 +355,14 @@ div.item.bottle {
   left: 0;
 }
 .ball {
-  /* position: absolute; */
+  position: absolute;
   display: none;
   top: 0;
   left: 0;
-
   animation:  infinite 6s linear rotate;
 }
 
-.ball:nth-child(even) {
-  padding-top: 3%;
-}
+
 /* @keyframes rotate {
   to {
     transform: rotate(360deg);
@@ -197,7 +372,6 @@ div.item.bottle {
 .ball:hover {
   display: none;
 }
-
 
 
 @media (min-width: 1566px) and (max-width: 2900px) {
@@ -215,7 +389,8 @@ div.item.bottle {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+
+@media (min-width: 768px) and (max-width: 1023px) {}
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .description_wrapper {
