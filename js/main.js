@@ -66,12 +66,9 @@ let balls = document.body.querySelectorAll('.ball')
 let ballsWrapper = document.body.querySelector('.balls_wrapper')
 let a = Array.from(balls)
 
-
-
 function showBalls() {
   ballsWrapper.style.display = 'block'
-  a.forEach(element => element.style.display = 'block')
-
+  // a.forEach(element => element.style.display = 'block')
 
   function getRandomPosition(element) {
     let x = document.body.offsetHeight-element.clientHeight;
@@ -81,35 +78,72 @@ function showBalls() {
     return [randomX,randomY]
   }
 
-
-
   let i = 0
-  let next = 1
-  for (i = 0; i < a.length; i++) {
-    var xy = getRandomPosition(ballsWrapper);
+  // let next = 1
 
-
+  for (i = 0; i < a.length-1; i++) {
+    let xy = getRandomPosition(ballsWrapper);
 
     a[i].style.width = mainBall.width;
-
     a[i].style.top = xy[0] + 'px';
     a[i].style.left = xy[1] + 'px';
     a[i].style.right = xy[1] + 'px';
     a[i].style.bottom = xy[0] + 'px';
 
-    next = i+1
-    console.log(next)
+    //
+    // function  checkCollision(el1, el2) {
+    //  let rect1 = el1.getBoundingClientRect();
+    //  let rect2 = el2.getBoundingClientRect();
+    //  let overlap = !(rect1.right < rect2.left ||
+    //                   rect1.left > rect2.right ||
+    //                   rect1.bottom < rect2.top ||
+    //                   rect1.top > rect2.bottom)
+    //  return overlap;
+    // }
+
+    let prev = a[i];
+
+    let next = a[i++];
+
+
+    let rr = prev.getBoundingClientRect();
+    let bb = next.getBoundingClientRect();
+
+        console.log(rr);
+
+        console.log(bb);
+    // console.log(a[i].getBoundingClientRect())
+
+
+
+
+    // let collision = checkCollision(prev,next)
+
+    let overlap = !(rr.right < bb.left ||
+                      rr.left > bb.right ||
+                      rr.bottom < bb.top ||
+                      rr.top > bb.bottom)
+    if (overlap) {
+      a[i].style.display = 'block'
+    }
+
+    console.log(overlap);
+
+
   }
 
-  let rect1 = a[0]
-  let rect2 = a[1]
 
 
-  let overlap = !(rect1.top <= rect2.bottom && rect1.bottom >= rect2.top && rect1.left <= rect2.right && rect1.right >= rect2.left)
-
-
-  console.log(rect1);
-  console.log(rect2);
+  //
+  // let rect1 = a[0]
+  // let rect2 = a[1]
+  //
+  //
+  // let overlap = !(rect1.top <= rect2.bottom && rect1.bottom >= rect2.top && rect1.left <= rect2.right && rect1.right >= rect2.left)
+  //
+  //
+  // console.log(rect1);
+  // console.log(rect2);
 
 
 
@@ -126,7 +160,7 @@ function showBalls() {
 // let nextY = '0';
 //
 //
-// var overlap = !(ball1.right < ball2.left ||
+// let overlap = !(ball1.right < ball2.left ||
 //                 ball1.left > ball2.right ||
 //                 ball1.bottom < ball2.top ||
 //                 ball1.top > ball2.bottom)
