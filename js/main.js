@@ -65,6 +65,7 @@ let mainBall = document.body.querySelector('.main_ball')
 let balls = document.body.querySelectorAll('.ball')
 let ballsWrapper = document.body.querySelector('.balls_wrapper')
 let a = Array.from(balls)
+let newBallsArray = []
 
 function showBalls() {
   ballsWrapper.style.display = 'block'
@@ -79,6 +80,12 @@ function showBalls() {
   }
 
   let i = 0
+
+  let prev = a[i];
+  console.log(prev);
+  let next = a[i+1];
+  console.log(next);
+
   // let next = 1
 
   for (i = 0; i < a.length-1; i++) {
@@ -101,17 +108,15 @@ function showBalls() {
     //  return overlap;
     // }
 
-    let prev = a[i];
-
-    let next = a[i++];
-
 
     let rr = prev.getBoundingClientRect();
     let bb = next.getBoundingClientRect();
 
         console.log(rr);
+        console.log(prev);
 
         console.log(bb);
+        console.log(next);
     // console.log(a[i].getBoundingClientRect())
 
 
@@ -119,17 +124,14 @@ function showBalls() {
 
     // let collision = checkCollision(prev,next)
 
-    let overlap = !(rr.right < bb.left ||
+    let noOverlap = (rr.right < bb.left ||
                       rr.left > bb.right ||
                       rr.bottom < bb.top ||
                       rr.top > bb.bottom)
-    if (overlap) {
-      a[i].style.display = 'block'
+    if (noOverlap) {
+      a[i+1].style.opacity = '1'
     }
-
-    console.log(overlap);
-
-
+    console.log(noOverlap);
   }
 
 
@@ -144,8 +146,6 @@ function showBalls() {
   //
   // console.log(rect1);
   // console.log(rect2);
-
-
 
 }
 

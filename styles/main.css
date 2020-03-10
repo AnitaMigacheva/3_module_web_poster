@@ -356,8 +356,7 @@ div.item.bottle {
 }
 .ball {
   position: absolute;
-  display: none;
-  top: 0;
+  opacity:  0;
   left: 0;
   animation:  infinite 6s linear rotate;
 }
