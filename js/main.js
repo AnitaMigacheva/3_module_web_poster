@@ -1,4 +1,4 @@
-let canTop = document.body.querySelector('.can_top')
+// let canTop = document.body.querySelector('.can_top')
 let can = document.body.querySelector('.can')
 let bottle = document.body.querySelector('.bottle')
 let collar = document.body.querySelector('.collar')
@@ -59,7 +59,7 @@ function spill(){
   liquid.style.transform = 'scale(1)'
 }
 
-// showBalls -----------------------------------------------
+// showBalls ----------------------------------------------
 
 let mainBall = document.body.querySelector('.main_ball')
 let balls = document.body.querySelectorAll('.ball')
