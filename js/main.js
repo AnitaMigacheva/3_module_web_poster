@@ -34,10 +34,10 @@ function changeCollar() {
     collar.src = './img/collar.svg';
   }
   setTimeout("changeCollar()",900);
-
-
 }
 
+
+//------------------ОТКРЫВАНИЕ БАНОЧКИ--------------------
 
 can.addEventListener('click', () => {
   can.classList.toggle('open')
@@ -54,25 +54,34 @@ function openCan(){
   }
 }
 
+
+//-----------------------БУТЫЛКА-------------------------
+
 function spill(){
   liquid.style.opacity = '1'
   liquid.style.transform = 'scale(1)'
 }
 
-// =---------------------showBalls------------------------------
+
+// =------------------ПОЯВЛЕНИЕ ШАРОВ---------------------
 
 let mainBall = document.body.querySelector('.main_ball')
-let balls = document.body.querySelectorAll('.ball')
-let ballsWrapper = document.body.querySelector('.balls_wrapper')
-let a = Array.from(balls)
-let newBallsArray = []
+
+let balls = new Array()
+
+let names = ['./img/ball.svg', './img/ball.svg','./img/ball.svg','./img/ball.svg','./img/ball.svg'] // массив адресов/имён файлов изображений
+
+for ( i = 0; i < names.length; i++) {
+   balls[i] = new Image ();
+   balls[i].src = names[i];
+   balls[i].style.position = 'fixed'
+}
+
+
+let sortedBalls = []
 
 function showBalls() {
- ballsWrapper.style.display = 'block'
 
-//-------ТУТ РАБОТАЕТ ТОЛЬКО ПРОВЕРКА ДЛЯ 2 СОСЕДНИХ ЭЛЕМЕНТОВ----------
-
-  // a.forEach(element => element.style.display = 'block')
 
   function getRandomPosition(element) {
     let x = document.body.offsetHeight-element.clientHeight;
@@ -82,53 +91,57 @@ function showBalls() {
     return [randomX,randomY]
   }
 
-  let i = 0
 
-  let prev = a[i];
-  console.log(prev);
-  let next = a[i+1];
-  console.log(next);
 
-  // let next = 1
+  for (i = 0; i < balls.length; i++) {
+    let xy = getRandomPosition(balls[i]);
+    // balls[i].style.width = mainBall.width;
+    balls[i].style.top = xy[0] + 'px';
+    balls[i].style.left = xy[1] + 'px';
+    balls[i].style.right = xy[1] + 'px';
+    balls[i].style.bottom = xy[0] + 'px';
 
-  for (i = 0; i < a.length-1; i++) {
-    let xy = getRandomPosition(ballsWrapper);
 
-    a[i].style.width = mainBall.width;
-    a[i].style.top = xy[0] + 'px';
-    a[i].style.left = xy[1] + 'px';
-    a[i].style.right = xy[1] + 'px';
-    a[i].style.bottom = xy[0] + 'px';
 
-  
+    for (let j = i + 1; j < balls.length; j++) {
 
-    let rr = prev.getBoundingClientRect();
-    let bb = next.getBoundingClientRect();
 
-        console.log(rr);
-        console.log(prev);
+      let prev = balls[i]
+      let next = balls[j]
+      console.log(prev);
+      console.log(next);
 
-        console.log(bb);
-        console.log(next);
-    // console.log(a[i].getBoundingClientRect())
+      // let rr = prev.getBoundingClientRect();
+      // let bb = next.getBoundingClientRect();
+      //
+      // console.log(rr);
+      // console.log(bb);
 
 
 
 
-    // let collision = checkCollision(prev,next)
 
-    let noOverlap = (rr.right < bb.left ||
-                      rr.left > bb.right ||
-                      rr.bottom < bb.top ||
-                      rr.top > bb.bottom)
-    if (noOverlap) {
-      // newBallsArray.push()
-      // a[i+1].style.opacity = '1'
-       a[i+1].style.display = 'block'
+      let noOverlap = (prev.style.right < next.style.left ||
+                       prev.style.left > next.style.right ||
+                       prev.style.bottom < next.style.top ||
+                       prev.style.top > next.style.bottom)
+
+      if (noOverlap) {
+
+        // sortedBalls.push(i)
+
+        document.body.append(balls[i]);
+
+      }
+
+
+    console.log(noOverlap);
 
     }
-    console.log(noOverlap);
+
   }
+
+
 
 }
 
