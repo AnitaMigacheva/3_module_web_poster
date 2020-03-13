@@ -4,7 +4,6 @@ let bottle = document.body.querySelector('.bottle')
 let collar = document.body.querySelector('.collar')
 let liquid = document.body.querySelector('.liquid')
 
-let bones = document.body.querySelectorAll('.bone')
 let bonesWrapper = document.body.querySelector('.bones')
 
 // let collars = document.body.querySelectorAll('.collar_other')
@@ -41,18 +40,25 @@ function changeCollar() {
 
 can.addEventListener('click', () => {
   can.classList.toggle('open')
-  openCan()
+
+  if (can.classList.contains('open')) {
+    bonesWrapper.style.display = 'block'
+    canTop.style.transform = 'rotate(-40deg) translate(50px, -50px)'
+   } else {
+    bonesWrapper.style.display = 'none'
+    canTop.style.transform = 'rotate(0deg) translate(0px, 0px)'
+   }
+
+ 
 })
 
-// function flyBones(){
-//   while(can.className == 'open')
-// }
 
-function openCan(){
-  if (can.classList.contains('open')) {
-    canTop.style.transform = 'rotate(-40deg) translate(50px, -50px)'
-  }
-}
+// function openCan() {
+//   if (can.classList.contains('open')) {
+//     bonesWrapper.style.display = 'block'
+//     canTop.style.transform = 'rotate(-40deg) translate(50px, -50px)'
+//   }
+// }
 
 
 //-----------------------БУТЫЛКА-------------------------
