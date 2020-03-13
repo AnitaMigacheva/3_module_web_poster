@@ -219,20 +219,16 @@ div.item.bottle {
   position: absolute;
   display: none;
 }
-
-
 .context {
     width: 100%;
     position: absolute;
     top:50vh;
 }
-
 .area {
     width: 100%;
     height:100vh;
     display: none;
 }
-
 .circles {
     position: absolute;
     top: 0;
@@ -334,7 +330,7 @@ div.item.bottle {
 
 }
 
-.balls_wrapper {
+/* .balls_wrapper {
   position: absolute;
   display: none;
   top: 0;
@@ -342,10 +338,11 @@ div.item.bottle {
 }
 .ball {
   position: absolute;
-  /* opacity:  0; */
+  opacity:  0;
+  display: none;
   left: 0;
   animation:  infinite 6s linear rotate;
-}
+} */
 
 
 /* @keyframes rotate {
