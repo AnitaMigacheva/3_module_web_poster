@@ -212,6 +212,7 @@ div.item.bottle {
     overflow: hidden;
     display: none;
     z-index: -1;
+    background-image: image(url());
 }
 .bones img {
     position: absolute;
@@ -241,6 +242,11 @@ div.item.bottle {
     animation-delay: 1s;
     animation-duration: 8s;
 }
+.bones img:nth-child(4n) {
+    left: 46%;
+
+    animation-duration: 3s;
+}
 .bones img:nth-child(9n) {
     left: 65%;
     width: 9vw;
@@ -252,26 +258,25 @@ div.item.bottle {
     animation-delay: 3s;
 }
 .bones img:nth-child(7) {
-    left: 35%;
+    left: 38%;
   width: 12vw;
     animation-delay: 2s;
 }
 .bones img:nth-child(8n) {
     left: 50%;
-    width: 15vw;
+    width: 13vw;
     animation-delay: 1s;
-    animation-duration: 15s;
+    animation-duration: 6s;
 }
 .bones img:nth-child(9n) {
     width: 15vw;
-    animation-delay: 0s;
+    animation-delay: 200ms;
     animation-duration: 2s;
 }
 .bones img:nth-child(10n) {
     left: 85%;
-    width: 12vw;
+    width: 19vw;
     animation-delay: 4s;
-    animation-duration: 2s;
 }
 .bones img:nth-child(10),
 .bones img:nth-child(15),
@@ -280,10 +285,40 @@ div.item.bottle {
     left: 35%;
 
 }
-.bones img:nth-child(11) {
+.bones img:nth-child(11n) {
   width: 10vw;
-    left: 25%;
+    left: 21%;
     animation-delay: 3s;
+}
+.bones img:nth-child(11) {
+  width: 12vw;
+    left: 17%;
+    animation-duration: 1s;
+}
+.bones img:nth-child(12n) {
+  width: 16vw;
+    left: 25%;
+    animation-delay: 900ms;
+}
+.bones img:nth-child(12n) {
+   width: 10vw;
+    left: 29%;
+    animation-delay: 700ms;
+}
+.bones img:nth-child(25) {
+  width: 19vw;
+    left: 15%;
+    animation-delay: 600ms;
+}
+.bones img:nth-child(27) {
+  width: 12vw;
+    left: 25%;
+    animation-delay: 700ms;
+}
+.bones img:nth-child(29) {
+  width: 16vw;
+    left: 60%;
+    animation-delay: 200ms;
 }
 
 @keyframes flyBones {
