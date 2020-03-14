@@ -105,38 +105,6 @@ let balls = new Array()
      balls[i].style.opacity = '0';
     document.body.append(balls[i]);
 
-    // for (let j = i + 1; j < balls.length; j++) {
-    //
-    //
-    //    let prev = balls[i]
-    //    let next = balls[j]
-    //    console.log(prev);
-    //    console.log(next);
-    //
-    //    // let rr = prev.getBoundingClientRect();
-    //    // let bb = next.getBoundingClientRect();
-    //    //
-    //    // console.log(rr);
-    //    // console.log(bb);
-    //
-    //
-    //    let noOverlap = (prev.style.right < next.style.left ||
-    //                     prev.style.left > next.style.right ||
-    //                     prev.style.bottom < next.style.top ||
-    //                     prev.style.top > next.style.bottom)
-    //
-    //    if (noOverlap) {
-    //
-    //      // sortedBalls.push(i)
-    //      balls[i].style.opacity = '1';
-    //
-    //
-    //    }
-    //
-    //
-    //  console.log(noOverlap);
-    //
-    //  }
 
   }
 
