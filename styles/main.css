@@ -48,13 +48,10 @@ h1 {
   padding-top: 50px;
 }
 .items {
-  /* height: 100%; */
   display: flex;
   flex-direction: column;
-  /* width: 80%; */
   flex-wrap: nowrap;
   margin-left: 10%;
-  /* margin-right: 12%; */
   width: 60%;
   height: 80%;
   align-items: center;
@@ -63,14 +60,7 @@ h1 {
 .item:hover {
   transform: scale(1.1) rotate(6deg);
   transition: 0.8s ease-in;
-  /* animation: 8s ease infinite hanging; */
 }
-/* @keyframes hanging {
-  50% {
-    transform: translateY(4%);
-  }
-
-} */
 .top_items_wrapper {
   display: flex;
   flex-wrap: nowrap;
@@ -104,9 +94,6 @@ h1 {
   display: block;
   padding-bottom: 3%;
 }
-.adress {
-  padding-bottom: 6%;
-}
 .can {
   position: relative;
   display: flex;
@@ -114,7 +101,7 @@ h1 {
 }
 .can_top {
   position: absolute;
-  transition: all 3s ease;
+  transition: transform 3s ease;
 }
 footer {
   display: flex;
@@ -125,13 +112,10 @@ footer p {
   font-weight: lighter;
 }
 .collar {
-  /* align-self: flex-start; */
   padding-left: 10%;
 }
-
 .item.collar {
   position: relative;
-
 }
 
 /* .collar_other {
@@ -168,15 +152,6 @@ footer p {
     transform: scale(1.1);
   }
 } */
-
-.boxes {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-
-  /* display: none; */
-}
-
 
 .can,
 .main_ball,
@@ -319,14 +294,12 @@ div.item.bottle {
 
 @keyframes animate {
 
-    0%{
-        transform: translateY(0) rotate(0deg);
-
+    0% {
+      transform: translateY(0) rotate(0deg);
     }
 
-    100%{
-        transform: translateY(-2000px) rotate(720deg);
-
+    100% {
+      transform: translateY(-2000px) rotate(720deg);
     }
 
 }
@@ -358,20 +331,78 @@ div.item.bottle {
 }
 
 
-@media query (min-width: 4000px) and (max-width: 5200px){
+@media (min-width: 4000px) and (max-width: 5200px){
+  h1 {
+    font-size: 2.5vw;
+    padding-bottom: 32%;
+  }
+  .description {
+    font-size: 3em;
+    width: auto;
+    padding-bottom: 20%;
+  }
+  .description_wrapper {
+    justify-content: flex-end;
+  }
+  .info {
+    font-size: 3em;
+    width: auto;
+  }
   .can {
-    padding-left: 10%;
+    padding-left: 0;
+  }
+  img.can,
+  img.can_top,
+  img#collar_img,
+  img.bottle {
+    width: 22vw;
+  }
+  img.ball {
+    width: 17vw;
+  }
+  .logo {
+    width: 300px;
   }
 }
 
 
-@media (min-width: 2900px) and (max-width: 3999px) {
+@media (min-width: 2901px) and (max-width: 3999px) {
+  h1 {
+    font-size: 60px;
+  }
   .can {
-    padding-left: 10%;
+    padding-left: 0;
+  }
+  img.can,
+  img.can_top,
+  img#collar_img,
+  img.bottle {
+    width: 22vw;
+  }
+  img.ball {
+    width: 17vw;
+  }
+  .logo {
+    width: 200px;
   }
 }
 
-@media (min-width: 1466px) and (max-width: 2900px) {
+@media (min-width: 1901px) and (max-width: 2900px) {
+  h1 {
+    font-size: 50px;
+  }
+  img.can,
+  img.can_top,
+  img#collar_img,
+  img.bottle {
+    width: 20vw;
+  }
+  img.ball {
+    width: 15vw;
+  }
+}
+
+@media (min-width: 1466px) and (max-width: 1900px) {
   .item {
     transform: scale(1.3);
   }

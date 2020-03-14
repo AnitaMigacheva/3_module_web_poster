@@ -1,39 +1,53 @@
 let canTop = document.body.querySelector('.can_top')
 let can = document.body.querySelector('.can')
 let bottle = document.body.querySelector('.bottle')
-let collar = document.body.querySelector('.collar')
 let liquid = document.body.querySelector('.liquid')
-
 let bonesWrapper = document.body.querySelector('.bones')
+let collar = document.getElementById('collar_img')
+//
+// images[0] = './img/collar-red.svg';
+// images[1] = './img/collar-wat.svg';
+// images[2] = './img/collar-black.svg';
+// images[3] = './img/collar-eyes.svg';
+// images[4] = './img/collar-gold.svg';
+// images[5] = './img/collar-gold.svg';
+// images[6] = './img/collar-black.svg';
+// // images[7] = './img/fish.png';
+// // let fish = images[7]
+// // fish.width = '300px';
 
-// let collars = document.body.querySelectorAll('.collar_other')
-// let collarsArray = Array.from(collars)
 
 let images = new Array();
-let i = 0;
+   let i = 0;
 
-images[0] = './img/collar-red.svg';
-images[1] = './img/collar-wat.svg';
-images[2] = './img/collar-black.svg';
-images[3] = './img/collar-eyes.svg';
-images[4] = './img/collar-gold.svg';
-images[5] = './img/collar-gold.svg';
-images[6] = './img/collar-gold.svg';
-// images[7] = './img/fish.png';
-// let fish = images[7]
-// fish.width = '300px';
+   images[0] = './img/collar-red.svg';
+   images[1] = './img/collar-gold.svg';
+   images[2] = './img/collar-black.svg';
 
 function changeCollar() {
-
-  let collar = document.getElementById('collar_img')
-  // collarsArray.forEach(element => element.style.display = 'block')
-  collar.src= images[i];
-  i++;
-  if (i == images.length) {
-    collar.src = './img/collar.svg';
-  }
-  setTimeout("changeCollar()",900);
+       collar.src = images[i];
+       i++;
+       if (i == images.length) {
+           i = 0;
+       }
+       setTimeout("changeCollar()",5000);
 }
+
+
+//
+// function changeCollar() {
+//
+//   for (i = 0; i < images.length; i++) {
+//     collar.src = images[i];
+//     console.log(images[i]);
+//
+//   }
+//   setTimeout("changeCollar()",900);
+//   // if (i == images.length) {
+//   //   collar.src = './img/collar.svg';
+//   // }
+//   // setTimeout("changeCollar()",900);
+// }
 
 
 //------------------ОТКРЫВАНИЕ БАНОЧКИ--------------------
@@ -49,16 +63,9 @@ can.addEventListener('click', () => {
     canTop.style.transform = 'rotate(0deg) translate(0px, 0px)'
    }
 
- 
+
 })
 
-
-// function openCan() {
-//   if (can.classList.contains('open')) {
-//     bonesWrapper.style.display = 'block'
-//     canTop.style.transform = 'rotate(-40deg) translate(50px, -50px)'
-//   }
-// }
 
 
 //-----------------------БУТЫЛКА-------------------------
@@ -73,79 +80,152 @@ function spill(){
 
 let mainBall = document.body.querySelector('.main_ball')
 
-let balls = new Array()
+let sortedBalls = []
 
-let names = ['./img/ball.svg', './img/ball.svg','./img/ball.svg','./img/ball.svg','./img/ball.svg'] // массив адресов/имён файлов изображений
-
-for ( i = 0; i < names.length; i++) {
-   balls[i] = new Image ();
-   balls[i].src = names[i];
-   balls[i].style.position = 'fixed'
+function getRandomPosition(element) {
+  let x = document.body.offsetHeight-element.clientHeight;
+  var y = document.body.offsetWidth-element.clientWidth;
+  var randomX = Math.floor(Math.random()*x);
+  var randomY = Math.floor(Math.random()*y);
+  return [randomX,randomY]
 }
 
+let balls = new Array()
 
-let sortedBalls = []
+  for (let i = 0; i < 10; i++) {
+     balls[i] = new Image ();
+     balls[i].src = './img/ball.svg'
+     balls[i].style.position = 'fixed'
+     let xy = getRandomPosition(balls[i]);
+     balls[i].style.width = '10vw';
+     balls[i].style.top = xy[0] + 'px';
+     balls[i].style.left = xy[1] + 'px';
+     balls[i].style.right = xy[1] + 'px';
+     balls[i].style.bottom = xy[0] + 'px';
+     balls[i].style.opacity = '0';
+    document.body.append(balls[i]);
+
+    // for (let j = i + 1; j < balls.length; j++) {
+    //
+    //
+    //    let prev = balls[i]
+    //    let next = balls[j]
+    //    console.log(prev);
+    //    console.log(next);
+    //
+    //    // let rr = prev.getBoundingClientRect();
+    //    // let bb = next.getBoundingClientRect();
+    //    //
+    //    // console.log(rr);
+    //    // console.log(bb);
+    //
+    //
+    //    let noOverlap = (prev.style.right < next.style.left ||
+    //                     prev.style.left > next.style.right ||
+    //                     prev.style.bottom < next.style.top ||
+    //                     prev.style.top > next.style.bottom)
+    //
+    //    if (noOverlap) {
+    //
+    //      // sortedBalls.push(i)
+    //      balls[i].style.opacity = '1';
+    //
+    //
+    //    }
+    //
+    //
+    //  console.log(noOverlap);
+    //
+    //  }
+
+  }
+
+
 
 function showBalls() {
 
 
-  function getRandomPosition(element) {
-    let x = document.body.offsetHeight-element.clientHeight;
-    var y = document.body.offsetWidth-element.clientWidth;
-    var randomX = Math.floor(Math.random()*x);
-    var randomY = Math.floor(Math.random()*y);
-    return [randomX,randomY]
-  }
+  for (let i = 0; i < 10; i++) {
+     balls[i] = new Image ();
+     balls[i].src = './img/ball.svg'
+     balls[i].style.position = 'fixed'
+     balls[i].style.opacity = '0';
+     let xy = getRandomPosition(balls[i]);
+     balls[i].style.top = xy[0] + 'px';
+     balls[i].style.left = xy[1] + 'px';
+     balls[i].style.right = xy[1] + 'px';
+     balls[i].style.bottom = xy[0] + 'px';
+     document.body.append(balls[i]);
 
-
-
-  for (i = 0; i < balls.length; i++) {
-    let xy = getRandomPosition(balls[i]);
-    // balls[i].style.width = mainBall.width;
-    balls[i].style.top = xy[0] + 'px';
-    balls[i].style.left = xy[1] + 'px';
-    balls[i].style.right = xy[1] + 'px';
-    balls[i].style.bottom = xy[0] + 'px';
-
-
-
-    for (let j = i + 1; j < balls.length; j++) {
-
-
-      let prev = balls[i]
-      let next = balls[j]
-      console.log(prev);
-      console.log(next);
-
-      // let rr = prev.getBoundingClientRect();
-      // let bb = next.getBoundingClientRect();
-      //
-      // console.log(rr);
-      // console.log(bb);
-
-
-
-
-
-      let noOverlap = (prev.style.right < next.style.left ||
-                       prev.style.left > next.style.right ||
-                       prev.style.bottom < next.style.top ||
-                       prev.style.top > next.style.bottom)
-
-      if (noOverlap) {
-
-        // sortedBalls.push(i)
-
-        document.body.append(balls[i]);
-
-      }
-
-
-    console.log(noOverlap);
-
-    }
+     // for (let j = i + 1; j < balls.length; j++) {
+     //
+     //
+     //    let prev = balls[i]
+     //    let next = balls[j]
+     //    console.log(prev);
+     //    console.log(next);
+     //
+     //    // let rr = prev.getBoundingClientRect();
+     //    // let bb = next.getBoundingClientRect();
+     //    //
+     //    // console.log(rr);
+     //    // console.log(bb);
+     //
+     //
+     //    let noOverlap = (prev.style.right < next.style.left ||
+     //                     prev.style.left > next.style.right ||
+     //                     prev.style.bottom < next.style.top ||
+     //                     prev.style.top > next.style.bottom)
+     //
+     //    if (noOverlap) {
+     //
+     //      // sortedBalls.push(i)
+     //      balls[i].style.opacity = '1';
+     //
+     //
+     //    }
+     //
+     //
+     //  console.log(noOverlap);
+     //
+     //  }
 
   }
+
+  //   for (let j = i + 1; j < balls.length; j++) {
+  //
+  //
+  //     let prev = balls[i]
+  //     let next = balls[j]
+  //     console.log(prev);
+  //     console.log(next);
+  //
+  //     // let rr = prev.getBoundingClientRect();
+  //     // let bb = next.getBoundingClientRect();
+  //     //
+  //     // console.log(rr);
+  //     // console.log(bb);
+  //
+
+  //     let noOverlap = (prev.style.right < next.style.left ||
+  //                      prev.style.left > next.style.right ||
+  //                      prev.style.bottom < next.style.top ||
+  //                      prev.style.top > next.style.bottom)
+  //
+  //     if (noOverlap) {
+  //
+  //       // sortedBalls.push(i)
+  //
+  //       document.body.append(balls[i]);
+  //
+  //     }
+  //
+  //
+  //   console.log(noOverlap);
+  //
+  //   }
+  //
+  // }
 
 
 
