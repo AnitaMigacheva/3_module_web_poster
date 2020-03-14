@@ -57,10 +57,11 @@ can.addEventListener('click', () => {
 
   if (can.classList.contains('open')) {
     bonesWrapper.style.display = 'block'
-    canTop.style.transform = 'rotate(-40deg) translate(50px, -50px)'
+    canTop.style.transform = 'rotate(-40deg) translate(50px, -8%)'
    } else {
     bonesWrapper.style.display = 'none'
     canTop.style.transform = 'rotate(0deg) translate(0px, 0px)'
+    // can.style.transform = 'scale(1)'
    }
 
 
@@ -89,115 +90,139 @@ function getRandomPosition(element) {
   var randomY = Math.floor(Math.random()*y);
   return [randomX,randomY]
 }
+//
+// let balls = new Array()
+//
+//   for (let i = 0; i < 10; i++) {
+//      balls[i] = new Image ();
+//      balls[i].src = './img/ball.svg'
+//      balls[i].style.position = 'fixed'
+//      let xy = getRandomPosition(balls[i]);
+//      balls[i].style.width = '10vw';
+//      balls[i].style.top = xy[0] + 'px';
+//      balls[i].style.left = xy[1] + 'px';
+//      balls[i].style.right = xy[1] + 'px';
+//      balls[i].style.bottom = xy[0] + 'px';
+//      balls[i].style.opacity = '0';
+//      document.body.append(balls[i]);
+//   }
+//
 
 let balls = new Array()
 
-  for (let i = 0; i < 10; i++) {
-     balls[i] = new Image ();
-     balls[i].src = './img/ball.svg'
-     balls[i].style.position = 'fixed'
-     let xy = getRandomPosition(balls[i]);
-     balls[i].style.width = '10vw';
-     balls[i].style.top = xy[0] + 'px';
-     balls[i].style.left = xy[1] + 'px';
-     balls[i].style.right = xy[1] + 'px';
-     balls[i].style.bottom = xy[0] + 'px';
-     balls[i].style.opacity = '0';
-    document.body.append(balls[i]);
-
-
-  }
-
-
-
 function showBalls() {
 
-
-  for (let i = 0; i < 10; i++) {
-     balls[i] = new Image ();
+  let i = 0;
+  for (i = 0; i < 30; i++) {
+     balls[i] = document.createElement('img')
      balls[i].src = './img/ball.svg'
      balls[i].style.position = 'fixed'
-     balls[i].style.opacity = '0';
-     let xy = getRandomPosition(balls[i]);
-     balls[i].style.top = xy[0] + 'px';
-     balls[i].style.left = xy[1] + 'px';
-     balls[i].style.right = xy[1] + 'px';
-     balls[i].style.bottom = xy[0] + 'px';
-     document.body.append(balls[i]);
+     balls[i].style.display = 'block'
+     balls[i].style.opacity = '1'
+     balls[i].classList.add('new_ball')
+     balls[i].style.transform = 'rotate(360deg)'
+     balls[i].style.width = '16vw'
+     let xy = getRandomPosition(balls[i])
+     balls[i].style.top = xy[0] + 'px'
+     balls[i].style.left = xy[1] + 'px'
+     balls[i].style.right = xy[1] + 'px'
+     balls[i].style.bottom = xy[0] + 'px'
 
-     // for (let j = i + 1; j < balls.length; j++) {
-     //
-     //
-     //    let prev = balls[i]
-     //    let next = balls[j]
-     //    console.log(prev);
-     //    console.log(next);
-     //
-     //    // let rr = prev.getBoundingClientRect();
-     //    // let bb = next.getBoundingClientRect();
-     //    //
-     //    // console.log(rr);
-     //    // console.log(bb);
-     //
-     //
-     //    let noOverlap = (prev.style.right < next.style.left ||
-     //                     prev.style.left > next.style.right ||
-     //                     prev.style.bottom < next.style.top ||
-     //                     prev.style.top > next.style.bottom)
-     //
-     //    if (noOverlap) {
-     //
-     //      // sortedBalls.push(i)
-     //      balls[i].style.opacity = '1';
-     //
-     //
-     //    }
-     //
-     //
-     //  console.log(noOverlap);
-     //
-     //  }
+     document.body.append(balls[i])
+     console.log(balls[i].style.display)
 
-  }
+     balls[i].addEventListener('mouseenter', function() {
+         balls[i].style.display = 'none'
+    })
+// modern browsers
 
-  //   for (let j = i + 1; j < balls.length; j++) {
-  //
-  //
-  //     let prev = balls[i]
-  //     let next = balls[j]
-  //     console.log(prev);
-  //     console.log(next);
-  //
-  //     // let rr = prev.getBoundingClientRect();
-  //     // let bb = next.getBoundingClientRect();
-  //     //
-  //     // console.log(rr);
-  //     // console.log(bb);
-  //
 
-  //     let noOverlap = (prev.style.right < next.style.left ||
-  //                      prev.style.left > next.style.right ||
-  //                      prev.style.bottom < next.style.top ||
-  //                      prev.style.top > next.style.bottom)
+     // console.log( p.getBoundingClientRect());
+
+
   //
-  //     if (noOverlap) {
-  //
-  //       // sortedBalls.push(i)
-  //
-  //       document.body.append(balls[i]);
-  //
-  //     }
+  // for (let j = i + 1; j < balls.length-1; j++) {
   //
   //
-  //   console.log(noOverlap);
+  //    let prev = balls[i]
+  //    let next = balls[j]
+  //    console.log(prev);
+  //    console.log(next);
   //
-  //   }
-  //
+  // //    let rr = prev.getBoundingClientRect();
+  // //    let bb = next.getBoundingClientRect();
+  // //
+  // //    console.log(rr);
+  // //    console.log(bb);
+  // //
+  // //
+  // //    let noOverlap = (rr.right < bb.left ||
+  // //                     rr.left > bb.right ||
+  // //                     rr.bottom < bb.top ||
+  // //                     rr.top > bb.bottom)
+  // //
+  // //    if (noOverlap) {
+  // //
+  // //      // sortedBalls.push(i)
+  // //      balls[i].style.opacity = '1';
+  // //
+  // //
+  // //    }
+  // //
+  // //
+  // //  console.log(noOverlap);
+  // //
   // }
+  }
+  balls[0].src = './img/ball-text.svg'
+  balls[1].src = './img/moon.png'
+  balls[2].src = './img/face.png'
+  balls[3].src = './img/ball-text.svg'
+  balls[4].src = './img/moon.png'
+  balls[5].src = './img/ball-text.svg'
+  balls[6].src = './img/face.png'
 
 
 
 }
+
+
+// for (let j = i + 1; j < balls.length; j++) {
+//
+//
+//    let prev = balls[i]
+//    let next = balls[j]
+//    console.log(prev);
+//    console.log(next);
+//
+//    let rr = prev.getBoundingClientRect();
+//    let bb = next.getBoundingClientRect();
+//
+//    console.log(rr);
+//    console.log(bb);
+//
+//
+//    let noOverlap = (rr.right < bb.left ||
+//                     rr.left > bb.right ||
+//                     rr.bottom < bb.top ||
+//                     rr.top > bb.bottom)
+//
+//    if (noOverlap) {
+//
+//      // sortedBalls.push(i)
+//      balls[i].style.opacity = '1';
+//
+//
+//    }
+//
+//
+//  console.log(noOverlap);
+//
+// }
+
+
+
+
 
 
 //------------ТУТ ПРОВЕРКА OVERLAP JQUERY----------------
