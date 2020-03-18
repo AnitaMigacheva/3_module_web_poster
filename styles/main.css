@@ -153,6 +153,17 @@ footer p {
   }
 } */
 
+
+.new_ball {
+   animation: rotate 5s infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .can,
 .main_ball,
 .can-top,

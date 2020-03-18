@@ -18,19 +18,28 @@ let collar = document.getElementById('collar_img')
 
 
 let images = new Array();
+
+  let fishImg = './img/fish.png';
+
    let i = 0;
 
    images[0] = './img/collar-red.svg';
    images[1] = './img/collar-gold.svg';
    images[2] = './img/collar-black.svg';
+   images[3] = './img/collar-red.svg';
+   images[4] = './img/collar-wat.svg';
+   images[5] = './img/collar-eyes.svg';
+   images[6] = './img/fish.png';
+
 
 function changeCollar() {
-       collar.src = images[i];
-       i++;
-       if (i == images.length) {
-           i = 0;
-       }
-       setTimeout("changeCollar()",5000);
+   collar.src = images[i];
+   i++;
+   if (i == images.length) {
+     i = 6;
+     collar.style.width = '100%'
+   }
+   setTimeout("changeCollar()", 800);
 }
 
 
@@ -80,9 +89,9 @@ function spill(){
 // =------------------ПОЯВЛЕНИЕ ШАРОВ---------------------
 
 let mainBall = document.body.querySelector('.main_ball')
-
-let sortedBalls = []
-
+//
+// let sortedBalls = []
+//
 function getRandomPosition(element) {
   let x = document.body.offsetHeight-element.clientHeight;
   var y = document.body.offsetWidth-element.clientWidth;
@@ -109,31 +118,81 @@ function getRandomPosition(element) {
 //
 
 let balls = new Array()
+let d = 200;
+let btnCreatCirc = document.querySelector('.ball')
+btnCreatCirc.onclick = function () {
 
-function showBalls() {
 
-  let i = 0;
-  for (i = 0; i < 30; i++) {
-     balls[i] = document.createElement('img')
-     balls[i].src = './img/ball.svg'
-     balls[i].style.position = 'fixed'
-     balls[i].style.display = 'block'
-     balls[i].style.opacity = '1'
-     balls[i].classList.add('new_ball')
-     balls[i].style.transform = 'rotate(360deg)'
-     balls[i].style.width = '16vw'
-     let xy = getRandomPosition(balls[i])
+
+    for (let i = 0; i < 30; i++) {
+      balls[i] = document.createElement('img')
+      balls[i].src = './img/ball.svg'
+      balls[i].style.position = 'fixed'
+      balls[i].style.display = 'block'
+      balls[i].classList.add('new_ball')
+      balls[i].style.width = '16vw'
+      balls[i].style.top = '0'
+      let xy = getRandomPosition(balls[i])
      balls[i].style.top = xy[0] + 'px'
      balls[i].style.left = xy[1] + 'px'
      balls[i].style.right = xy[1] + 'px'
      balls[i].style.bottom = xy[0] + 'px'
+     d+=200
+      //
+      // balls[i].style.transform = `translate(${anime.random(0,90)}vw, ${anime.random(0,100)}vh)`
+      setTimeout(function(){
 
-     document.body.append(balls[i])
-     console.log(balls[i].style.display)
+        document.body.append(balls[i])}, d)
 
-     balls[i].addEventListener('mouseenter', function() {
-         balls[i].style.display = 'none'
-    })
+
+        balls[i].addEventListener('mouseout', function() {
+          balls[i].style.display = 'none';
+
+      });
+
+
+
+  }
+
+  balls[0].src = './img/ball-text.svg'
+  balls[1].src = './img/moon.png'
+  balls[2].src = './img/face.png'
+  balls[3].src = './img/ball-text.svg'
+  balls[4].src = './img/moon.png'
+  balls[5].src = './img/ball-text.svg'
+  balls[6].src = './img/face.png'
+}
+
+
+//
+//
+//
+// let balls = new Array()
+//
+// function showBalls() {
+//
+//   let i = 0;
+//   for (i = 0; i < 30; i++) {
+//      balls[i] = document.createElement('img')
+//      balls[i].src = './img/ball.svg'
+//      balls[i].style.position = 'fixed'
+//      balls[i].style.display = 'block'
+//      balls[i].style.opacity = '1'
+//      balls[i].classList.add('new_ball')
+//      balls[i].style.transform = 'rotate(360deg)'
+//      balls[i].style.width = '16vw'
+//      let xy = getRandomPosition(balls[i])
+     // balls[i].style.top = xy[0] + 'px'
+     // balls[i].style.left = xy[1] + 'px'
+     // balls[i].style.right = xy[1] + 'px'
+     // balls[i].style.bottom = xy[0] + 'px'
+//
+//      document.body.append(balls[i])
+//      console.log(balls[i].style.display)
+//
+//      balls[i].addEventListener('mouseenter', function() {
+//          balls[i].style.display = 'none'
+//     })
 // modern browsers
 
 
@@ -173,18 +232,18 @@ function showBalls() {
   // //  console.log(noOverlap);
   // //
   // }
-  }
-  balls[0].src = './img/ball-text.svg'
-  balls[1].src = './img/moon.png'
-  balls[2].src = './img/face.png'
-  balls[3].src = './img/ball-text.svg'
-  balls[4].src = './img/moon.png'
-  balls[5].src = './img/ball-text.svg'
-  balls[6].src = './img/face.png'
-
-
-
-}
+//   }
+//   balls[0].src = './img/ball-text.svg'
+//   balls[1].src = './img/moon.png'
+//   balls[2].src = './img/face.png'
+//   balls[3].src = './img/ball-text.svg'
+//   balls[4].src = './img/moon.png'
+//   balls[5].src = './img/ball-text.svg'
+//   balls[6].src = './img/face.png'
+//
+//
+//
+// }
 
 
 // for (let j = i + 1; j < balls.length; j++) {
