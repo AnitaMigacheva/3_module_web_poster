@@ -526,7 +526,7 @@ div.item.bottle {
     padding-top: 16%;
     justify-content: flex-end;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
     height: 30%;
     width: 100%;
   }
@@ -549,6 +549,13 @@ div.item.bottle {
   }
   .collar img {
     padding-left: 10%;
+  }
+  .description_info {
+    align-content: flex-start;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding-top: 5%;
   }
 }
 
@@ -614,6 +621,7 @@ div.item.bottle {
     padding-left: 170vw;
     padding-right: 40vw;
   }
+
 
 }
 
