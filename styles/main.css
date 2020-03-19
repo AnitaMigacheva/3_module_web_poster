@@ -22,7 +22,6 @@ h1 {
   font-size: 40px;
   letter-spacing: .03;
   font-weight: bold;
-  align-self: flex-end;
 }
 .wrapper {
   width: 100%;
@@ -117,43 +116,6 @@ footer p {
 .item.collar {
   position: relative;
 }
-
-/* .collar_other {
-  display: none;
-  position: absolute;
-  opacity: 0;
-  top: 0;
-} */
-
-
-/*
-.collar_other.gold {
-  animation: appearhide ease 100ms;
-}
-.collar_other.eyes {
-  animation: appearhide 700ms ease 4s;
-}
-.collar_other.black {
-  animation: appearhide 700ms ease 6s;
-}
-.collar_other.wat {
-  animation: appearhide 700ms ease 8s;
-}
-.collar_other.red {
-  animation: appearhide 700ms ease 10s;
-}
-.collar_other.gold {
-  animation: appearhide 700ms ease 12s;
-}
-
-@keyframes appearhide {
-  90% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-} */
-
-
 .new_ball {
    animation: rotate 5s infinite linear;
 }
@@ -189,6 +151,7 @@ footer p {
 .liquid_img {
   animation: 80s ease 3s infinite swim;
 }
+
 @keyframes swim {
   10% {
     transform: scale(1.3);
@@ -203,6 +166,7 @@ footer p {
     transform: scale(1.2) rotate(90deg);
   }
 }
+
 div.item.bottle {
   position: relative;
   display: flex;
@@ -333,15 +297,13 @@ div.item.bottle {
 }
 
 @keyframes flyBones {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
 
-    0% {
-      transform: translateY(0) rotate(0deg);
-    }
-
-    100% {
-      transform: translateY(-3000px) rotate(720deg);
-    }
-
+  100% {
+    transform: translateY(-3000px) rotate(720deg);
+  }
 }
 
 .info_adaptive_mobile {
@@ -351,7 +313,6 @@ div.item.bottle {
 @media (min-width: 4000px) and (max-width: 5200px){
   h1 {
     font-size: 2.5vw;
-    padding-bottom: 32%;
   }
   .description {
     font-size: 3em;
@@ -359,11 +320,45 @@ div.item.bottle {
     padding-bottom: 20%;
   }
   .description_wrapper {
-    justify-content: flex-end;
+    justify-content: center;
   }
   .info {
     font-size: 3em;
     width: auto;
+    padding-top: 28%;
+  }
+  .can {
+    padding-left: 0;
+  }
+  img.can,
+  img.can_top,
+  img#collar_img,
+  img.bottle {
+    width: 22vw;
+  }
+  img.ball {
+    width: 17vw;
+  }
+  .logo {
+    width: 300px;
+  }
+}
+@media (min-width: 3001px) and (max-width: 3999px){
+  h1 {
+    font-size: 2.5vw;
+  }
+  .description {
+    font-size: 3em;
+    width: auto;
+    padding-bottom: 20%;
+  }
+  .description_wrapper {
+    justify-content: center;
+  }
+  .info {
+    font-size: 3em;
+    width: auto;
+    padding-top: 28%;
   }
   .can {
     padding-left: 0;
@@ -382,30 +377,29 @@ div.item.bottle {
   }
 }
 
-@media (min-width: 2901px) and (max-width: 3999px) {
+
+@media (min-width: 2001px) and (max-width: 3000px) {
   h1 {
-    font-size: 60px;
+    font-size: 2vw;
+  }
+  .description {
+    font-size: 1.8em;
+    width: auto;
+    padding-bottom: 20%;
+  }
+  .description_wrapper {
+    justify-content: center;
+  }
+  .info {
+    font-size: 1.8em;
+    width: auto;
+    padding-top: 28%;
   }
   .can {
     padding-left: 0;
   }
-  img.can,
-  img.can_top,
-  img#collar_img,
-  img.bottle {
-    width: 22vw;
-  }
-  img.ball {
-    width: 17vw;
-  }
   .logo {
-    width: 200px;
-  }
-}
-
-@media (min-width: 1901px) and (max-width: 2900px) {
-  h1 {
-    font-size: 50px;
+    width: 100px;
   }
   img.can,
   img.can_top,
@@ -418,7 +412,7 @@ div.item.bottle {
   }
 }
 
-@media (min-width: 1466px) and (max-width: 1900px) {
+@media (min-width: 1466px) and (max-width: 2000px) {
   .item {
     transform: scale(1.3);
   }
@@ -437,6 +431,15 @@ div.item.bottle {
   .items {
     align-items: flex-end;
   }
+  .info {
+    padding-top: 28%;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  .collar img {
+    padding-left: 10%;
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1465px) {
@@ -444,7 +447,7 @@ div.item.bottle {
     font-size: 34px;
   }
   .description {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -464,7 +467,7 @@ div.item.bottle {
   }
   .description_wrapper {
     padding-top: 16%;
-    justify-content: flex-end;
+    justify-content: center;
     display: flex;
     flex-direction: column-reverse;
     height: 30%;
