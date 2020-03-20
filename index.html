@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ru" dir="ltr">
 <head>
   <meta charset="utf-8">
@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   <script src="https://unpkg.com/swiper/js/swiper.js"></script>
   <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-
   <title>web_poster</title>
 </head>
 <body>
@@ -75,20 +74,16 @@
         </div>
       </div>
 
-
       <div class="swiper-container">
-
        <div class="swiper-wrapper">
-
-           <div class="swiper-slide">
+           <div class="swiper-slide" >
              <div class="item main_ball">
              <img src="img/ball.svg" alt="" class="ball">
             </div>
           </div>
-
-           <div class="swiper-slide">
+          <div class="swiper-slide">
              <div class="item collar" >
-               <img src="img/collar.svg" alt="" id="collar_img" onclick="changeCollar()">
+               <img src="img/collar.svg" alt="" id="collar_img">
              </div>
           </div>
 
@@ -100,7 +95,7 @@
           </div>
 
            <div class="swiper-slide">
-             <div class="item bottle" onclick="spill()">
+             <div class="item bottle" >
                <img src="img/bottle.svg" alt="" class="bottle">
                <div class="wrapper_liquid">
                  <svg class="liquid" x="0px" y="0px" viewBox="0 0 288 288">
@@ -116,17 +111,7 @@
                </div>
              </div>
           </div>
-
-
-
        </div>
-
-       <!-- <div class="swiper-pagination"></div>
-
-       <div class="swiper-button-prev"></div>
-       <div class="swiper-button-next"></div>
-
-       <div class="swiper-scrollbar"></div> -->
      </div>
 
 
@@ -174,17 +159,4 @@
 
   </div>
   <script src="js/main.js" charset="utf-8" type="text/javascript"></script>
-  <script>
-    var swiper = new Swiper('.swiper-container', {
-      spaceBetween: 30,
-      centeredSlides: true,
-      preventClicks: false,
-      preventClicksPropagation: false,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: true,
-      }
-    });
-    
-  </script>
 </body>

@@ -313,6 +313,7 @@ div.item.bottle {
 .swiper-container {
     width: 800px;
     height: 400px;
+    display: none;
 }
 
 @media (min-width: 4000px) and (max-width: 5200px){
@@ -629,7 +630,9 @@ div.item.bottle {
     padding-left: 170vw;
     padding-right: 40vw;
   }
-
+  .swiper-container {
+    display: block;
+  }
 
 }
 
@@ -654,14 +657,17 @@ div.item.bottle {
   .logo {
     width: 100px;
   }
-  .items {
+  .swiper-container {
+    display: block;
+  }
+  /* .items {
     flex-direction: row;
     width: 100vw;
     overflow: scroll;
     margin-left: 0;
     height: 40vh;
     display: none;
-  }
+  } */
   .item {
     transform: scale(1.4);
     padding: 0 6vw;
