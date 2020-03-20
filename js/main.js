@@ -9,7 +9,7 @@ $(document).ready(function () {
   //initialize swiper when document ready
   var mySwiper = new Swiper ('.swiper-container', {
     // Optional parameters
-    direction: 'vertical',
+    direction: 'horizontal',
     loop: true
   })
 });
@@ -39,21 +39,6 @@ function changeCollar() {
    setTimeout("changeCollar()", 800);
 }
 
-
-//
-// function changeCollar() {
-//
-//   for (i = 0; i < images.length; i++) {
-//     collar.src = images[i];
-//     console.log(images[i]);
-//
-//   }
-//   setTimeout("changeCollar()",900);
-//   // if (i == images.length) {
-//   //   collar.src = './img/collar.svg';
-//   // }
-//   // setTimeout("changeCollar()",900);
-// }
 
 
 //------------------ОТКРЫВАНИЕ БАНОЧКИ--------------------
