@@ -311,8 +311,8 @@ div.item.bottle {
 }
 
 .swiper-container {
-    width: 600px;
-    height: 300px;
+    width: 800px;
+    height: 400px;
 }
 
 @media (min-width: 4000px) and (max-width: 5200px){

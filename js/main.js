@@ -5,14 +5,17 @@ let liquid = document.body.querySelector('.liquid')
 let bonesWrapper = document.body.querySelector('.bones')
 let collar = document.getElementById('collar_img')
 
-$(document).ready(function () {
-  //initialize swiper when document ready
-  var mySwiper = new Swiper ('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true
-  })
-});
+// $(document).ready(function () {
+//   //initialize swiper when document ready
+//   var mySwiper = new Swiper ('.swiper-container', {
+//     // Optional parameters
+//     direction: 'horizontal',
+//     loop: true
+//   })
+// });
+
+
+
 
 let images = new Array();
 
