@@ -4,11 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/slick.css">
-  <link rel="stylesheet" href="styles/slick-theme.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="js/slick.js"></script>
   <script src="js/anime.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+  <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
   <title>web_poster</title>
 </head>
 <body>
@@ -85,8 +87,6 @@
         </span>
       </div>
     </div>
-
-
     <ul class="bones">
       <img src="img/bone-gold.svg" alt="">
       <img src="img/bone-red.svg" alt="">
@@ -114,8 +114,40 @@
       <img src="img/bone-gold.svg" alt="">
       <img src="img/bone-red-cross.svg" alt="">
     </ul>
+      <div class="swiper-container">
+      <!-- Additional required wrapper -->
+       <div class="swiper-wrapper">
+          <!-- Slides -->
+           <div class="swiper-slide">
+             <div class="item main_ball">
+             <img src="img/ball.svg" alt="" class="ball">
+            </div>
+          </div>
 
+           <div class="swiper-slide">
+             <div class="item main_ball">
+             <img src="img/ball.svg" alt="" class="ball">
+            </div>
+          </div>
 
+           <div class="swiper-slide">
+             <div class="item main_ball">
+             <img src="img/ball.svg" alt="" class="ball">
+            </div>
+          </div>
+
+          ...
+       </div>
+      <!-- If we need pagination -->
+       <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+       <div class="swiper-button-prev"></div>
+       <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+       <div class="swiper-scrollbar"></div>
+     </div>
   </div>
   <script src="js/main.js" charset="utf-8" type="text/javascript"></script>
 </body>
