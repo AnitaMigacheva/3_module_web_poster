@@ -15,6 +15,15 @@ let collar = document.getElementById('collar_img')
 // });
 
 
+let swiperWrapper = document.querySelector('.swiper-wrapper')
+swiperWrapper.addEventListener('click', function(event){
+  if(event.target.className === 'liquid') {
+    liquid.style.opacity = '1'
+    liquid.style.transform = 'scale(1)'
+  }
+})
+
+
 
 
 let images = new Array();
