@@ -77,10 +77,7 @@ can.addEventListener('click', () => {
     canTop.style.transform = 'rotate(0deg) translate(0px, 0px)'
     // can.style.transform = 'scale(1)'
    }
-
-
 })
-
 
 
 //-----------------------БУТЫЛКА-------------------------
@@ -105,55 +102,35 @@ function getRandomPosition(element) {
   var randomY = Math.floor(Math.random()*y);
   return [randomX,randomY]
 }
-//
-// let balls = new Array()
-//
-//   for (let i = 0; i < 10; i++) {
-//      balls[i] = new Image ();
-//      balls[i].src = './img/ball.svg'
-//      balls[i].style.position = 'fixed'
-//      let xy = getRandomPosition(balls[i]);
-//      balls[i].style.width = '10vw';
-//      balls[i].style.top = xy[0] + 'px';
-//      balls[i].style.left = xy[1] + 'px';
-//      balls[i].style.right = xy[1] + 'px';
-//      balls[i].style.bottom = xy[0] + 'px';
-//      balls[i].style.opacity = '0';
-//      document.body.append(balls[i]);
-//   }
-//
+
 
 let balls = new Array()
 let delay = 90;
 let btnCreatBall = document.querySelector('.ball')
 btnCreatBall.onclick = function() {
 
-
-
-    for (let i = 0; i < 30; i++) {
-      balls[i] = document.createElement('img')
-      balls[i].src = './img/ball.svg'
-      balls[i].style.position = 'fixed'
-      balls[i].style.display = 'block'
-      balls[i].classList.add('new_ball')
-      balls[i].style.width = mainBall.width
-      balls[i].style.top = '0'
-      let xy = getRandomPosition(balls[i])
-     balls[i].style.top = xy[0] + 'px'
-     balls[i].style.left = xy[1] + 'px'
-     balls[i].style.right = xy[1] + 'px'
-     balls[i].style.bottom = xy[0] + 'px'
-     delay+=90
-      //
-      // balls[i].style.transform = `translate(${anime.random(0,90)}vw, ${anime.random(0,100)}vh)`
-      setTimeout(function(){
-        document.body.append(balls[i])}, delay)
-
-        balls[i].addEventListener('mouseout', function() {
-          balls[i].style.display = 'none';
-      });
+  for (let i = 0; i < 40; i++) {
+    balls[i] = document.createElement('img')
+    balls[i].src = './img/ball.svg'
+    balls[i].style.position = 'fixed'
+    balls[i].style.display = 'block'
+    balls[i].classList.add('new_ball')
+    balls[i].style.width = mainBall.width
+    balls[i].style.top = '0'
+    let xy = getRandomPosition(balls[i])
+    balls[i].style.top = xy[0] + 'px'
+    balls[i].style.left = xy[1] + 'px'
+    balls[i].style.right = xy[1] + 'px'
+    balls[i].style.bottom = xy[0] + 'px'
+    delay+=90
+    //
+    // balls[i].style.transform = `translate(${anime.random(0,90)}vw, ${anime.random(0,100)}vh)`
+    setTimeout(function(){
+      document.body.append(balls[i])}, delay)
+      balls[i].addEventListener('mouseout', function() {
+      balls[i].style.display = 'none';
+    });
   }
-
   balls[0].src = './img/ball-text.svg'
   balls[1].src = './img/moon.png'
   balls[2].src = './img/face.png'
@@ -164,5 +141,4 @@ btnCreatBall.onclick = function() {
   balls[7].src = './img/ball-text.svg'
   balls[8].src = './img/moon.png'
   balls[9].src = './img/face.png'
-
 }

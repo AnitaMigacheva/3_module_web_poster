@@ -46,6 +46,9 @@ h1 {
   z-index: 1;
   padding-top: 50px;
 }
+.item {
+  cursor: url('rays.svg'), pointer;
+}
 .items {
   display: flex;
   flex-direction: column;
