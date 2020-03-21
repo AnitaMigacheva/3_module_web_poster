@@ -8,8 +8,6 @@ let wrapper2 = document.querySelector('.wrapper2')
 let items = document.body.querySelector('.items')
 
 
-
-
 let images = new Array()
 
 // let fishImg = './img/fish.png'
@@ -113,7 +111,15 @@ btnCreatBall.onclick = function() {
 
 
 //-----------------СЛАЙДЕР ДЛЯ ТЕЛЕФОНА--------------------
-
+function changeCollarMobile() {
+   collarMobile.src = images[i];
+   i++;
+   if (i == images.length) {
+     i = 0;
+     collarMobile.style.width = '100%'
+   }
+   setTimeout("changeCollarMobile()", 800);
+}
 let ballMobile = document.querySelector('.main_ball_mobile')
 
 $(window).resize(function() {
@@ -148,15 +154,7 @@ swiperWrapper.addEventListener('click', function(event){
     liquidMobile.style.opacity = '1'
     liquidMobile.style.transform = 'scale(1)'
   } else if (event.target.classList.contains('collar_mobile')) {
+    changeCollarMobile()
 
-    function changeCollarMobile() {
-       collarMobile.src = images[i];
-       i++;
-       if (i == images.length) {
-         i = 0;
-         collarMobile.style.width = '100%'
-       }
-       setTimeout("changeCollarMobile()", 800);
-    }
   }
 })
