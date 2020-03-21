@@ -5,45 +5,14 @@ let liquid = document.body.querySelector('.liquid')
 let bonesWrapper = document.body.querySelector('.bones')
 let collar = document.getElementById('collar_img')
 let wrapper2 = document.querySelector('.wrapper2')
-
 let items = document.body.querySelector('.items')
 
-$(window).resize(function() {
-  if (window.innerWidth < 600 ){
-     items.remove()
-  } else {
-    wrapper2.append(items)
-  }
-});
 
-
-$(document).ready(function () {
-  //initialize swiper when document ready
-  var swiper = new Swiper('.swiper-container', {
-    spaceBetween: 30,
-    centeredSlides: true,
-    preventClicks: false,
-    preventClicksPropagation: false,
-    autoplay: {
-      delay: 1000,
-      disableOnInteraction: true,
-    }
-  });
-});
-
-let swiperWrapper = document.querySelector('.swiper-wrapper')
-swiperWrapper.addEventListener('click', function(event){
-  if(event.target.classList.contains('bottle')) {
-    spill()
-  } else if (event.target.classList.contains('collar')) {
-    changeCollar()
-  }
-})
 
 
 let images = new Array()
 
-let fishImg = './img/fish.png'
+// let fishImg = './img/fish.png'
 let i = 0
 images[0] = './img/collar-red.svg'
 images[1] = './img/collar-gold.svg'
@@ -51,13 +20,13 @@ images[2] = './img/collar-black.svg'
 images[3] = './img/collar-red.svg'
 images[4] = './img/collar-wat.svg'
 images[5] = './img/collar-eyes.svg'
-images[6] = './img/fish.png'
+// images[6] = './img/fish.png'
 
 function changeCollar() {
    collar.src = images[i];
    i++;
    if (i == images.length) {
-     i = 6;
+     i = 0;
      collar.style.width = '100%'
    }
    setTimeout("changeCollar()", 800);
@@ -92,7 +61,6 @@ function spill(){
 
 let mainBall = document.body.querySelector('.main_ball')
 
-
 // let sortedBalls = []
 
 function getRandomPosition(element) {
@@ -102,7 +70,6 @@ function getRandomPosition(element) {
   var randomY = Math.floor(Math.random()*y);
   return [randomX,randomY]
 }
-
 
 let balls = new Array()
 let delay = 90;
@@ -142,3 +109,54 @@ btnCreatBall.onclick = function() {
   balls[8].src = './img/moon.png'
   balls[9].src = './img/face.png'
 }
+
+
+
+//-----------------СЛАЙДЕР ДЛЯ ТЕЛЕФОНА--------------------
+
+let ballMobile = document.querySelector('.main_ball_mobile')
+
+$(window).resize(function() {
+  if (window.innerWidth < 600 ){
+     items.remove()
+  } else {
+    wrapper2.append(items)
+  }
+});
+
+$(document).ready(function () {
+  //initialize swiper when document ready
+  var swiper = new Swiper('.swiper-container', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    preventClicks: false,
+    preventClicksPropagation: false,
+    autoplay: {
+      delay: 1000,
+      disableOnInteraction: true,
+    }
+  })
+})
+
+let liquidMobile =  document.body.querySelector('.liquid_mobile')
+let swiperWrapper = document.querySelector('.swiper-wrapper')
+let btnCreatBallMobile = document.querySelector('.main_ball_mobile')
+let collarMobile = document.querySelector('.collar_mobile')
+
+swiperWrapper.addEventListener('click', function(event){
+  if(event.target.classList.contains('bottle_mobile')) {
+    liquidMobile.style.opacity = '1'
+    liquidMobile.style.transform = 'scale(1)'
+  } else if (event.target.classList.contains('collar_mobile')) {
+
+    function changeCollarMobile() {
+       collarMobile.src = images[i];
+       i++;
+       if (i == images.length) {
+         i = 0;
+         collarMobile.style.width = '100%'
+       }
+       setTimeout("changeCollarMobile()", 800);
+    }
+  }
+})

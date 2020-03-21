@@ -129,6 +129,9 @@ footer p {
   }
 }
 
+.adress {
+  line-height: 130%;
+}
 .can,
 .main_ball,
 .can-top,
@@ -222,7 +225,6 @@ div.item.bottle {
 }
 .bones img:nth-child(4n) {
     left: 46%;
-
     animation-duration: 3s;
 }
 .bones img:nth-child(9n) {
@@ -314,7 +316,7 @@ div.item.bottle {
 }
 
 .swiper-container {
-    width: 800px;
+    width: 100vw;
     height: 400px;
     display: none;
 }
@@ -580,17 +582,21 @@ div.item.bottle {
     height: 30%;
     width: 100%;
   }
+  .wrapper {
+    padding: 0;
+  }
   .wrapper2 {
     padding: 0;
     width: 100%;
     flex-direction: column;
   }
   .description {
-    padding-top: 4vh;
-    padding-bottom: 0;
+    /* padding-top: 4vh;
+    padding-bottom: 0; */
+    display: none;
   }
   .logo {
-    width: 100px;
+    width: 120px;
   }
   .items {
     flex-direction: row;
@@ -598,11 +604,11 @@ div.item.bottle {
     overflow: scroll;
     margin-left: 0;
     height: 40vh;
+    display: none;
   }
   .item {
     transform: scale(1.4);
     padding: 0 14vw;
-
   }
   .item:hover {
     transform: scale(1.5);
@@ -613,7 +619,7 @@ div.item.bottle {
   }
   h1 {
     align-self: flex-start;
-    font-size: 48px;
+    font-size: 38px;
   }
   .info {
     display: none;
@@ -636,17 +642,20 @@ div.item.bottle {
   .swiper-container {
     display: block;
   }
-
 }
 
 @media (min-width: 300px) and (max-width: 473px) {
   .description_wrapper {
-    padding-top: 20%;
+    padding-top: 22%;
+    padding-left: 6vw;
     justify-content: flex-end;
     display: flex;
     flex-direction: column-reverse;
     height: 30%;
     width: 100%;
+  }
+  .wrapper {
+    padding: 0;
   }
   .wrapper2 {
     padding: 0;
@@ -654,36 +663,35 @@ div.item.bottle {
     flex-direction: column;
   }
   .description {
-    padding-top: 4vh;
-    padding-bottom: 0;
+    /* padding-top: 4vh;
+    padding-bottom: 0; */
+    display: none;
   }
   .logo {
     width: 100px;
+    padding-left: 6vw;
   }
   .swiper-container {
     display: block;
   }
-  /* .items {
-    flex-direction: row;
+  .items {
+    /* flex-direction: row;
     width: 100vw;
     overflow: scroll;
     margin-left: 0;
-    height: 40vh;
+    height: 40vh; */
     display: none;
-  } */
+  }
   .item {
     transform: scale(1.4);
-    padding: 0 6vw;
+    padding: 6vh 6vw;
   }
   .item:hover {
     transform: scale(1.5);
   }
-  .wrapper {
-    overflow: hidden;
-    padding: 0 6%;
-  }
   h1 {
     align-self: flex-start;
+    font-size: 36px;
   }
   .info {
     display: none;
@@ -693,6 +701,7 @@ div.item.bottle {
     flex-direction: column;
     align-self: flex-start;
     padding-bottom: 5vh;
+    padding-left: 6vw;
   }
   .mail,
   .adress,
