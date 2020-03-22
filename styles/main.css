@@ -61,7 +61,7 @@ h1 {
 }
 .item:hover {
   transform: scale(1.1) rotate(6deg);
-  transition: 0.8s ease-in;
+  transition: 0.6s ease-in;
 }
 .top_items_wrapper {
   display: flex;
@@ -148,28 +148,28 @@ footer p {
 }
 .liquid {
   opacity: 0;
-  transform: scale(0);
+  /* transform: scale(0); */
   width: 120%;
   padding-left: 26%;
   height: auto;
-  transition: all 3s ease-in;
+  transition: all 2s ease-in;
 }
 .liquid_img {
-  animation: 80s ease 3s infinite swim;
+  animation: 70s ease 2s infinite swim;
 }
 
 @keyframes swim {
   10% {
-    transform: scale(1.3);
+    transform: scale(1.3)translate(2%, 2%);
   }
   30% {
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
   50% {
-    transform: scale(1.3) rotate(60deg);
+    transform: scale(1.5) translateX(4%);
   }
   70% {
-    transform: scale(1.2) rotate(90deg);
+    transform: scale(1.3);
   }
 }
 
@@ -193,87 +193,84 @@ div.item.bottle {
     overflow: hidden;
     display: none;
     z-index: -1;
-    background-image: image(url());
 }
 .bones img {
-    position: absolute;
-    display: block;
-    animation: flyBones 5s linear infinite;
-    bottom: -650px;
+  position: absolute;
+  display: block;
+  animation: flyBones linear infinite;
+  bottom: -650px;
+  animation-duration: 3s;
 }
 .bones img:nth-child(1) {
-    left: 25%;
-    width: 24vw;
-    animation-delay: 0s;
+  left: 25%;
+  width: 24vw;
+  animation-duration: 4s;
 }
 .bones img:nth-child(2) {
-    left: 10%;
-    width: 19vw;
-    animation-delay: 500ms;
-    animation-duration: 6s;
+  left: 10%;
+  width: 19vw;
+  animation-duration: 6s;
 }
 .bones img:nth-child(3) {
-    left: 70%;
+  left: 70%;
   width: 16vw;
-    animation-delay: 600ms;
 }
 .bones img:nth-child(4) {
-    left: 40%;
-    width: 13vw;
-    animation-delay: 1s;
-    animation-duration: 8s;
+  left: 40%;
+  width: 13vw;
+  animation-delay: 1s;
+  animation-duration: 5s;
 }
 .bones img:nth-child(4n) {
-    left: 46%;
-    animation-duration: 3s;
+  left: 46%;
+  animation-duration: 3s;
 }
 .bones img:nth-child(9n) {
-    left: 65%;
-    width: 9vw;
-    animation-delay: 0s;
+  left: 65%;
+  width: 9vw;
+  animation-delay: 0s;
 }
 .bones img:nth-child(6) {
-    left: 75%;
+  left: 75%;
   width: 16vw;
-    animation-delay: 3s;
+  animation-delay: 3s;
 }
 .bones img:nth-child(7) {
-    left: 38%;
+  left: 38%;
   width: 12vw;
-    animation-delay: 2s;
+  animation-delay: 2s;
 }
 .bones img:nth-child(8n) {
-    left: 50%;
-    width: 13vw;
-    animation-delay: 1s;
-    animation-duration: 6s;
+  left: 50%;
+  width: 13vw;
+  animation-delay: 1s;
+  animation-duration: 6s;
 }
 .bones img:nth-child(9n) {
-    width: 15vw;
-    animation-delay: 200ms;
-    animation-duration: 2s;
+  width: 15vw;
+  animation-delay: 200ms;
+  animation-duration: 2s;
 }
 .bones img:nth-child(10n) {
-    left: 85%;
-    width: 19vw;
-    animation-delay: 4s;
+  left: 85%;
+  width: 19vw;
+  animation-delay: 4s;
 }
 .bones img:nth-child(10),
 .bones img:nth-child(15),
 .bones img:nth-child(9),
  {
-    left: 35%;
-
+  left: 35%;
 }
 .bones img:nth-child(11n) {
   width: 10vw;
-    left: 21%;
-    animation-delay: 3s;
+  left: 21%;
+  animation-delay: 3s;
 }
 .bones img:nth-child(11) {
   width: 12vw;
-    left: 17%;
-    animation-duration: 1s;
+  left: 17%;
+  animation-duration: 1s;
 }
 .bones img:nth-child(12n) {
   width: 16vw;
@@ -281,24 +278,24 @@ div.item.bottle {
     animation-delay: 900ms;
 }
 .bones img:nth-child(12n) {
-   width: 10vw;
-    left: 29%;
-    animation-delay: 700ms;
+  width: 10vw;
+  left: 29%;
+  animation-delay: 700ms;
 }
 .bones img:nth-child(25) {
   width: 19vw;
-    left: 15%;
-    animation-delay: 600ms;
+  left: 15%;
+  animation-delay: 600ms;
 }
 .bones img:nth-child(27) {
   width: 12vw;
-    left: 25%;
-    animation-delay: 700ms;
+  left: 25%;
+  animation-delay: 500ms;
 }
 .bones img:nth-child(29) {
   width: 16vw;
-    left: 60%;
-    animation-delay: 200ms;
+  left: 60%;
+  animation-delay: 200ms;
 }
 
 @keyframes flyBones {
@@ -307,7 +304,7 @@ div.item.bottle {
   }
 
   100% {
-    transform: translateY(-3000px) rotate(720deg);
+    transform: translateY(-4000px) rotate(720deg);
   }
 }
 
@@ -351,7 +348,8 @@ div.item.bottle {
     width: 17vw;
   }
   .logo {
-    width: 300px;
+    width: 260px;
+    padding-top: 12vh;
   }
 }
 @media (min-width: 3001px) and (max-width: 3999px){
@@ -359,7 +357,7 @@ div.item.bottle {
     font-size: 2.5vw;
   }
   .description {
-    font-size: 3em;
+    font-size: 2.2em;
     width: auto;
     padding-bottom: 20%;
   }
@@ -367,7 +365,7 @@ div.item.bottle {
     justify-content: center;
   }
   .info {
-    font-size: 3em;
+    font-size: 2.2em;
     width: auto;
     padding-top: 28%;
   }
@@ -384,7 +382,8 @@ div.item.bottle {
     width: 17vw;
   }
   .logo {
-    width: 300px;
+    width: 200px;
+    padding-top: 12vh;
   }
 }
 
@@ -398,19 +397,20 @@ div.item.bottle {
     width: auto;
     padding-bottom: 20%;
   }
-  .description_wrapper {
-    justify-content: center;
-  }
   .info {
     font-size: 1.8em;
     width: auto;
     padding-top: 28%;
+  }
+  .description_wrapper {
+    justify-content: center;
   }
   .can {
     padding-left: 0;
   }
   .logo {
     width: 100px;
+    padding-top: 12vh;
   }
   img.can,
   img.can_top,
@@ -422,9 +422,59 @@ div.item.bottle {
     width: 15vw;
   }
 }
-
-@media (min-width: 1466px) and (max-width: 2000px) {
+@media (min-width: 1601px) and (max-width: 2000px) {
   .item {
+    transform: scale(1.4);
+  }
+  .item:hover {
+    transform: scale(1.5);
+  }
+  .description {
+    font-size: 1.2em;
+    width: auto;
+    padding-bottom: 20%;
+  }
+  .info {
+    font-size: 1.2em;
+    width: auto;
+    padding-top: 28%;
+  }
+  .top_items_wrapper {
+    width: 90%;
+    justify-content: space-between;
+    padding-bottom: 16%;
+  }
+  .bottom_items_wrapper {
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 10%;
+  }
+  .items {
+    align-items: flex-end;
+  }
+  .can {
+    padding-left: 0;
+  }
+  .info {
+    padding-top: 28%;
+  }
+  h1 {
+    font-size: 44px;
+  }
+  .collar img {
+    padding-left: 10%;
+  }
+  .logo {
+    width: 100px;
+    padding-top: 12vh;
+  }
+}
+
+@media (min-width: 1466px) and (max-width: 1600px) {
+  .item {
+    transform: scale(1.2);
+  }
+  .item:hover {
     transform: scale(1.3);
   }
   .top_items_wrapper {
@@ -435,30 +485,39 @@ div.item.bottle {
   .bottom_items_wrapper {
     width: 100%;
     justify-content: space-between;
-  }
-  .can {
     padding-left: 10%;
   }
   .items {
     align-items: flex-end;
   }
+  .can {
+    padding-left: 0;
+  }
   .info {
     padding-top: 28%;
   }
   h1 {
-    font-size: 48px;
+    font-size: 40px;
   }
   .collar img {
     padding-left: 10%;
+  }
+  .logo {
+    width: 100px;
+    padding-top: 12vh;
   }
 }
 
 @media (min-width: 1024px) and (max-width: 1465px) {
   h1 {
-    font-size: 34px;
+    font-size: 36px;
   }
   .description {
     font-size: 16px;
+  }
+  .logo {
+    width: 100px;
+    padding-top: 12vh;
   }
 }
 
@@ -519,6 +578,13 @@ div.item.bottle {
     flex-direction: row-reverse;
     justify-content: flex-end;
     padding-top: 5%;
+  }
+  .can {
+    padding-left: 0;
+  }
+  .logo {
+    width: 100px;
+    padding-top: 12vh;
   }
 }
 

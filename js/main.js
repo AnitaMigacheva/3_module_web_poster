@@ -49,10 +49,17 @@ can.addEventListener('click', () => {
 
 //-----------------------БУТЫЛКА-------------------------
 
-function spill(){
-  liquid.style.opacity = '1'
-  liquid.style.transform = 'scale(1)'
-}
+bottle.addEventListener('click', () => {
+  bottle.classList.toggle('open')
+
+  if (bottle.classList.contains('open')) {
+    liquid.style.opacity = '1'
+    liquid.style.transform = 'scale(1.6)'
+   } else {
+     liquid.style.opacity = '0'
+     liquid.style.transform = 'scale(1)'
+   }
+})
 
 
 // =------------------ПОЯВЛЕНИЕ ШАРОВ---------------------
