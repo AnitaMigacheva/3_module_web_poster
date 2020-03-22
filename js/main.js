@@ -20,14 +20,21 @@ images[4] = './img/collar-wat.svg'
 images[5] = './img/collar-eyes.svg'
 // images[6] = './img/fish.png'
 
+
+collar.addEventListener('click', () => {
+  collar.classList.toggle('changing')
+  changeCollar()
+})
+
 function changeCollar() {
-   collar.src = images[i];
-   i++;
-   if (i == images.length) {
-     i = 0;
-     collar.style.width = '100%'
-   }
-   setTimeout("changeCollar()", 800);
+  if(collar.classList.contains('changing') && i < images.length) {
+    collar.src = images[i];
+    i++;
+    setTimeout('changeCollar()', 600);
+  } else {
+    collar.src = './img/collar.svg'
+    i = 0;
+  }
 }
 
 
@@ -103,6 +110,7 @@ btnCreatBall.onclick = function() {
       balls[i].style.display = 'none';
     });
   }
+
   balls[0].src = './img/ball-text.svg'
   balls[1].src = './img/moon.png'
   balls[2].src = './img/face.png'
@@ -116,8 +124,8 @@ btnCreatBall.onclick = function() {
 }
 
 
-
 //-----------------СЛАЙДЕР ДЛЯ ТЕЛЕФОНА--------------------
+
 function changeCollarMobile() {
    collarMobile.src = images[i];
    i++;
@@ -125,7 +133,7 @@ function changeCollarMobile() {
      i = 0;
      collarMobile.style.width = '100%'
    }
-   setTimeout("changeCollarMobile()", 800);
+   setTimeout('changeCollarMobile()', 800);
 }
 let ballMobile = document.querySelector('.main_ball_mobile')
 
