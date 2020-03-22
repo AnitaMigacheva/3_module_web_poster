@@ -58,7 +58,6 @@ can.addEventListener('click', () => {
 
 bottle.addEventListener('click', () => {
   bottle.classList.toggle('open')
-
   if (bottle.classList.contains('open')) {
     liquid.style.opacity = '1'
     liquid.style.transform = 'scale(1.6)'
@@ -73,13 +72,11 @@ bottle.addEventListener('click', () => {
 
 let mainBall = document.body.querySelector('.main_ball')
 
-// let sortedBalls = []
-
 function getRandomPosition(element) {
   let x = document.body.offsetHeight-element.clientHeight;
-  var y = document.body.offsetWidth-element.clientWidth;
-  var randomX = Math.floor(Math.random()*x);
-  var randomY = Math.floor(Math.random()*y);
+  let y = document.body.offsetWidth-element.clientWidth;
+  let randomX = Math.floor(Math.random()*x);
+  let randomY = Math.floor(Math.random()*y);
   return [randomX,randomY]
 }
 
@@ -110,7 +107,6 @@ btnCreatBall.onclick = function() {
       balls[i].style.display = 'none';
     });
   }
-
   balls[0].src = './img/ball-text.svg'
   balls[1].src = './img/moon.png'
   balls[2].src = './img/face.png'
@@ -131,14 +127,13 @@ function changeCollarMobile() {
    i++;
    if (i == images.length) {
      i = 0;
-     collarMobile.style.width = '100%'
    }
    setTimeout('changeCollarMobile()', 800);
 }
 let ballMobile = document.querySelector('.main_ball_mobile')
 
 $(window).resize(function() {
-  if (window.innerWidth < 600 ){
+  if (window.innerWidth < 579 ){
      items.remove()
   } else {
     wrapper2.append(items)
@@ -161,7 +156,6 @@ $(document).ready(function () {
 
 let liquidMobile =  document.body.querySelector('.liquid_mobile')
 let swiperWrapper = document.querySelector('.swiper-wrapper')
-let btnCreatBallMobile = document.querySelector('.main_ball_mobile')
 let collarMobile = document.querySelector('.collar_mobile')
 
 swiperWrapper.addEventListener('click', function(event){
@@ -170,6 +164,34 @@ swiperWrapper.addEventListener('click', function(event){
     liquidMobile.style.transform = 'scale(1)'
   } else if (event.target.classList.contains('collar_mobile')) {
     changeCollarMobile()
+  } else if (event.target.classList.contains('ball_mobile')) {
+    for (let i = 0; i < 25; i++) {
+      balls[i] = document.createElement('img')
+      balls[i].src = './img/ball.svg'
+      balls[i].style.position = 'fixed'
+      balls[i].style.display = 'block'
+      balls[i].classList.add('new_ball')
+      balls[i].style.zIndex = '2'
+      balls[i].style.width = '40vw'
+      balls[i].style.top = '0'
+      let xy = getRandomPosition(balls[i])
+      balls[i].style.top = xy[0] + 'px'
+      balls[i].style.left = xy[1] + 'px'
+      balls[i].style.right = xy[1] + 'px'
+      balls[i].style.bottom = xy[0] + 'px'
+      delay+=90
 
+      setTimeout(function(){
+        document.body.append(balls[i])}, delay)
+        balls[i].addEventListener('mouseout', function() {
+        balls[i].style.display = 'none';
+      });
+    }
+    balls[0].src = './img/ball-text.svg'
+    balls[1].src = './img/moon.png'
+    balls[2].src = './img/face.png'
+    balls[3].src = './img/ball-text.svg'
+    balls[4].src = './img/moon.png'
+    balls[5].src = './img/ball-text.svg'
   }
 })
