@@ -130,14 +130,6 @@ function changeCollarMobile() {
 }
 let ballMobile = document.querySelector('.main_ball_mobile')
 
-$(window).resize(function() {
-  if (window.innerWidth < 579 ){
-     items.remove()
-  } else {
-    wrapper2.append(items)
-  }
-});
-
 $(document).ready(function () {
   //initialize swiper when document ready
   var swiper = new Swiper('.swiper-container', {
