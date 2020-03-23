@@ -250,6 +250,7 @@ div.item.bottle {
   width: 15vw;
   animation-delay: 200ms;
   animation-duration: 2s;
+  z-index: 2;
 }
 .bones img:nth-child(10n) {
   left: 85%;

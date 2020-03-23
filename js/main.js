@@ -47,7 +47,6 @@ can.addEventListener('click', () => {
    } else {
     bonesWrapper.style.display = 'none'
     canTop.style.transform = 'rotate(0deg) translate(0px, 0px)'
-    // can.style.transform = 'scale(1)'
    }
 })
 
@@ -66,7 +65,7 @@ bottle.addEventListener('click', () => {
 })
 
 
-// =------------------ПОЯВЛЕНИЕ ШАРОВ---------------------
+//------------------ПОЯВЛЕНИЕ ШАРОВ---------------------
 
 let mainBall = document.body.querySelector('.main_ball')
 
@@ -96,9 +95,8 @@ btnCreatBall.onclick = function() {
     balls[i].style.left = xy[1] + 'px'
     balls[i].style.right = xy[1] + 'px'
     balls[i].style.bottom = xy[0] + 'px'
-    delay+=90
-    //
-    // balls[i].style.transform = `translate(${anime.random(0,90)}vw, ${anime.random(0,100)}vh)`
+    delay += 90
+
     setTimeout(function(){
       document.body.append(balls[i])}, delay)
       balls[i].addEventListener('mouseout', function() {
@@ -128,10 +126,8 @@ function changeCollarMobile() {
    }
    setTimeout('changeCollarMobile()', 800);
 }
-let ballMobile = document.querySelector('.main_ball_mobile')
 
 $(document).ready(function () {
-  //initialize swiper when document ready
   var swiper = new Swiper('.swiper-container', {
     spaceBetween: 30,
     centeredSlides: true,
@@ -144,18 +140,23 @@ $(document).ready(function () {
   })
 })
 
+let ballMobile = document.querySelector('.main_ball_mobile')
 let liquidMobile =  document.body.querySelector('.liquid_mobile')
 let swiperWrapper = document.querySelector('.swiper-wrapper')
 let collarMobile = document.querySelector('.collar_mobile')
+let canMobile = document.querySelector('.can_mobile')
+let canTopMobile = document.querySelector('.can_top_mobile')
 
-swiperWrapper.addEventListener('click', function(event){
+swiperWrapper.addEventListener('click', function(event) {
+
   if(event.target.classList.contains('bottle_mobile')) {
     liquidMobile.style.opacity = '1'
     liquidMobile.style.transform = 'scale(1)'
+    autoplay: false
   } else if (event.target.classList.contains('collar_mobile')) {
     changeCollarMobile()
   } else if (event.target.classList.contains('ball_mobile')) {
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 30; i++) {
       balls[i] = document.createElement('img')
       balls[i].src = './img/ball.svg'
       balls[i].style.position = 'fixed'
@@ -170,7 +171,6 @@ swiperWrapper.addEventListener('click', function(event){
       balls[i].style.right = xy[1] + 'px'
       balls[i].style.bottom = xy[0] + 'px'
       delay+=90
-
       setTimeout(function(){
         document.body.append(balls[i])}, delay)
         balls[i].addEventListener('mouseout', function() {
@@ -183,5 +183,15 @@ swiperWrapper.addEventListener('click', function(event){
     balls[3].src = './img/ball-text.svg'
     balls[4].src = './img/moon.png'
     balls[5].src = './img/ball-text.svg'
+
+  } else {
+      canMobile.classList.toggle('open')
+      if (canMobile.classList.contains('open')) {
+        bonesWrapper.style.display = 'block'
+        canTopMobile.style.transform = 'rotate(-40deg) translate(50px, -8%)'
+      } else {
+        bonesWrapper.style.display = 'none'
+        canTopMobile.style.transform = 'rotate(0deg) translate(0px, 0px)'
+      }
   }
 })
