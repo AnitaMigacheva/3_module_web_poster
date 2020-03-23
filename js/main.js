@@ -10,7 +10,6 @@ let items = document.body.querySelector('.items')
 
 let images = new Array()
 
-// let fishImg = './img/fish.png'
 let i = 0
 images[0] = './img/collar-red.svg'
 images[1] = './img/collar-gold.svg'
@@ -18,8 +17,7 @@ images[2] = './img/collar-black.svg'
 images[3] = './img/collar-red.svg'
 images[4] = './img/collar-wat.svg'
 images[5] = './img/collar-eyes.svg'
-// images[6] = './img/fish.png'
-
+images[6] = './img/collar-spikes.svg'
 
 collar.addEventListener('click', () => {
   collar.classList.toggle('changing')
