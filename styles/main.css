@@ -840,6 +840,7 @@ div.item.bottle {
   .logo {
     width: 120px;
     padding-left: 6vw;
+    padding-top: 40px;
   }
   .swiper-container {
     display: block;
@@ -862,7 +863,7 @@ div.item.bottle {
   }
   h1 {
     align-self: flex-start;
-    font-size: 35px;
+    font-size: 32px;
   }
   .info {
     display: none;
