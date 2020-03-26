@@ -564,6 +564,7 @@ div.item.bottle {
   h1 {
     font-size: 32px;
     padding-bottom: 10%;
+    padding-top: 4%;
   }
   .description {
     font-size: 14px;
@@ -641,6 +642,7 @@ div.item.bottle {
   h1 {
     font-size: 54px;
     align-self: flex-start;
+    padding-top: 4%;
   }
   .collar img {
     padding-left: 10%;
