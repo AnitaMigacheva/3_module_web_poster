@@ -563,7 +563,7 @@ div.item.bottle {
 @media (min-width: 1025px) and (max-width: 1365px) {
   h1 {
     font-size: 32px;
-    padding-bottom: 12%;
+    padding-bottom: 10%;
   }
   .description {
     font-size: 14px;
