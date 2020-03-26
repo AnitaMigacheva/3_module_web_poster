@@ -206,7 +206,7 @@ div.item.bottle {
 }
 .bones img:nth-child(3) {
   left: 70%;
-  width: 16vw;
+  width: 14vw;
   animation-delay: 2s;
   animation-duration: 4s;
 }
@@ -246,8 +246,14 @@ div.item.bottle {
   animation-delay: 1s;
   animation-duration: 4s;
 }
+.bones img:nth-child(17) {
+  left: 52%;
+  width: 10vw;
+  animation-delay: 4s;
+  animation-duration: 3s;
+}
 .bones img:nth-child(9n) {
-  width: 15vw;
+  width: 14vw;
   animation-delay: 350ms;
   animation-duration: 4s;
 }
@@ -290,8 +296,8 @@ div.item.bottle {
   animation-delay: 2.5s;
 }
 .bones img:nth-child(20) {
-  width: 18vw;
-  left: 31%;
+  width: 12vw;
+  left: 11%;
   animation-delay: 500ms;
 }
 .bones img:nth-child(21) {
@@ -300,7 +306,7 @@ div.item.bottle {
   animation-delay: 350ms;
 }
 .bones img:nth-child(22) {
-  width: 20vw;
+  width: 10vw;
   left: 30%;
   animation-delay: 700ms;
 }
@@ -310,13 +316,13 @@ div.item.bottle {
   animation-delay: 950ms;
 }
 .bones img:nth-child(24) {
-  width: 13;
+  width: 11;
   left: 19%;
   animation-delay: 3s;
 }
 .bones img:nth-child(25) {
   width: 23vw;
-  left: 40%;
+  left: 50%;
   animation-delay: 700ms;
 }
 .bones img:nth-child(27) {
@@ -339,7 +345,6 @@ div.item.bottle {
   0% {
     transform: translateY(0) rotate(0deg);
   }
-
   100% {
     transform: translateY(-4000px) rotate(720deg);
   }
@@ -348,7 +353,6 @@ div.item.bottle {
 .info_adaptive_mobile {
   display: none;
 }
-
 .swiper-container {
   width: 100vw;
   height: 400px;
@@ -433,7 +437,6 @@ div.item.bottle {
   }
 }
 
-
 @media (min-width: 2101px) and (max-width: 3000px) {
   h1 {
     font-size: 2.3vw;
@@ -512,6 +515,10 @@ div.item.bottle {
   .bottle {
     padding-left: 2%;
   }
+  .liquid {
+    width: 74%;
+    padding-left: 16%;
+  }
 }
 
 @media (min-width: 1366px) and (max-width: 1700px) {
@@ -546,6 +553,10 @@ div.item.bottle {
   }
   .info {
     padding-bottom: 30px;
+  }
+  .liquid {
+    width: 74%;
+    padding-left: 16%;
   }
 }
 
