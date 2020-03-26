@@ -886,5 +886,6 @@ div.item.bottle {
   }
   .liquid_img {
     width: 600px;
+    padding-bottom: 10%;
   }
 }
