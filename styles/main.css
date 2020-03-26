@@ -884,4 +884,7 @@ div.item.bottle {
   .collar {
     padding-left: 12%;
   }
+  .liquid_img {
+    width: 600px;
+  }
 }
