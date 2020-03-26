@@ -187,7 +187,7 @@ div.item.bottle {
   z-index: -1;
 }
 .bones img {
-  width: 16vw;
+  width: 12vw;
   position: absolute;
   display: block;
   animation: flyBones linear infinite;
@@ -259,7 +259,7 @@ div.item.bottle {
 }
 .bones img:nth-child(10n) {
   left: 85%;
-  width: 23vw;
+  width: 21vw;
   animation-delay: 850ms;
 }
 .bones img:nth-child(10) {
@@ -271,7 +271,7 @@ div.item.bottle {
   animation-delay: 650ms;
 }
 .bones img:nth-child(11n) {
-  width: 17vw;
+  width: 13vw;
   left: 21%;
   animation-delay: 3s;
 }
@@ -321,7 +321,7 @@ div.item.bottle {
   animation-delay: 3s;
 }
 .bones img:nth-child(25) {
-  width: 23vw;
+  width: 13vw;
   left: 50%;
   animation-delay: 700ms;
 }
