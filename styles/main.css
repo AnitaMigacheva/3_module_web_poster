@@ -187,6 +187,7 @@ div.item.bottle {
   z-index: -1;
 }
 .bones img {
+  width: 16vw;
   position: absolute;
   display: block;
   animation: flyBones linear infinite;
@@ -195,7 +196,7 @@ div.item.bottle {
 }
 .bones img:first-child {
   left: 25%;
-  width: 24vw;
+  width: 20vw;
   animation-duration: 4s;
 }
 .bones img:nth-child(2) {
@@ -236,12 +237,12 @@ div.item.bottle {
 }
 .bones img:nth-child(16) {
   left: 40%;
-  width: 26vw;
+  width: 16vw;
   animation-delay: 3s;
 }
 .bones img:nth-child(8n) {
   left: 50%;
-  width: 23vw;
+  width: 20vw;
   animation-delay: 1s;
   animation-duration: 4s;
 }
@@ -284,7 +285,7 @@ div.item.bottle {
   animation-delay: 800ms;
 }
 .bones img:nth-child(18) {
-  width: 29vw;
+  width: 17vw;
   left: 10%;
   animation-delay: 2.5s;
 }
@@ -294,12 +295,12 @@ div.item.bottle {
   animation-delay: 500ms;
 }
 .bones img:nth-child(21) {
-  width: 26vw;
+  width: 16vw;
   left: 40%;
   animation-delay: 350ms;
 }
 .bones img:nth-child(22) {
-  width: 28vw;
+  width: 20vw;
   left: 30%;
   animation-delay: 700ms;
 }
@@ -309,7 +310,7 @@ div.item.bottle {
   animation-delay: 950ms;
 }
 .bones img:nth-child(24) {
-  width: 32vw;
+  width: 13;
   left: 19%;
   animation-delay: 3s;
 }
@@ -319,17 +320,17 @@ div.item.bottle {
   animation-delay: 700ms;
 }
 .bones img:nth-child(27) {
-  width: 40vw;
+  width: 20vw;
   left: 10%;
   animation-delay: 900ms;
 }
 .bones img:nth-child(28) {
-  width: 30vw;
+  width: 21vw;
   left: 20%;
   animation-delay: 950ms;
 }
 .bones img:nth-child(26) {
-  width: 39vw;
+  width: 19vw;
   left: 29%;
   animation-delay: 1s;
 }
@@ -349,9 +350,9 @@ div.item.bottle {
 }
 
 .swiper-container {
-    width: 100vw;
-    height: 400px;
-    display: none;
+  width: 100vw;
+  height: 400px;
+  display: none;
 }
 
 @media (min-width: 4000px) and (max-width: 5200px){
@@ -543,6 +544,9 @@ div.item.bottle {
     width: 100px;
     padding-top: 14vh;
   }
+  .info {
+    padding-bottom: 30px;
+  }
 }
 
 @media (min-width: 1025px) and (max-width: 1365px) {
@@ -580,6 +584,9 @@ div.item.bottle {
   .liquid {
     width: 74%;
     padding-left: 16%;
+  }
+  .info {
+    padding-bottom: 30px;
   }
 }
 
@@ -753,8 +760,6 @@ div.item.bottle {
     flex-direction: column;
   }
   .description {
-    /* padding-top: 4vh;
-    padding-bottom: 0; */
     display: none;
   }
   .logo {
