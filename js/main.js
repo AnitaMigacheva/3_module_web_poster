@@ -70,15 +70,15 @@ bottle.addEventListener('click', () => {
 let mainBall = document.body.querySelector('.main_ball')
 
 function getRandomPosition(element) {
-  let x = document.body.offsetHeight-element.clientHeight;
-  let y = document.body.offsetWidth-element.clientWidth;
-  let randomX = Math.floor(Math.random()*x);
-  let randomY = Math.floor(Math.random()*y);
+  let x = document.body.offsetHeight-element.clientHeight
+  let y = document.body.offsetWidth-element.clientWidth
+  let randomX = Math.floor(Math.random()*x)
+  let randomY = Math.floor(Math.random()*y)
   return [randomX,randomY]
 }
 
 let balls = new Array()
-let delay = 90;
+let delay = 90
 let btnCreatBall = document.querySelector('.ball')
 btnCreatBall.onclick = function() {
 
@@ -100,8 +100,8 @@ btnCreatBall.onclick = function() {
     setTimeout(function(){
       document.body.append(balls[i])}, delay)
       balls[i].addEventListener('mouseout', function() {
-      balls[i].style.display = 'none';
-    });
+      balls[i].style.display = 'none'
+    })
   }
   balls[0].src = './img/ball-text.svg'
   balls[1].src = './img/moon.png'
@@ -146,12 +146,19 @@ let swiperWrapper = document.querySelector('.swiper-wrapper')
 let collarMobile = document.querySelector('.collar_mobile')
 let canMobile = document.querySelector('.can_mobile')
 let canTopMobile = document.querySelector('.can_top_mobile')
+let bottleMobile = document.querySelector('.bottle_mobile')
 
 swiperWrapper.addEventListener('click', function(event) {
 
   if(event.target.classList.contains('bottle_mobile')) {
-    liquidMobile.style.opacity = '1'
-    liquidMobile.style.transform = 'scale(1)'
+    bottleMobile.classList.toggle('open')
+    if (bottleMobile.classList.contains('open')) {
+      liquidMobile.style.opacity = '1'
+      liquidMobile.style.transform = 'scale(1)'
+     } else {
+       liquidMobile.style.opacity = '0'
+       liquidMobile.style.transform = 'scale(0.7)'
+     }
     autoplay: false
   } else if (event.target.classList.contains('collar_mobile')) {
     changeCollarMobile()
